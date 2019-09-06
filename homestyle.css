@@ -1,0 +1,46 @@
+header{
+  overflow: hidden;
+  background-color: #083643;
+  border-radius:
+}
+header h1 {
+  color:#CEF09D;
+
+}
+header li a {
+  text-decoration: none;
+  color:#CEF09D;
+}
+.btn-primary {
+  background-color: #CEF09D;
+}
+.float-right{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+.fondo {
+  /* background-color: #CEF09D; */
+  /* background-color: #476C5E; */
+}
+.flow{
+  flex-flow: row wrap;
+}
+.btn-primary{
+  color: white;
+  background-color: #18BC9C;
+  border-color: #18BC9C;
+}
+#productContainer{
+  border: 1px solid silver;
+  background-color: #476C5E;
+}
+
+#imagenDeProducto{
+  width: inherit;
+}
+#separadorDeProducto{
+  overflow: hidden;
+  /* width:50%; */
+}
