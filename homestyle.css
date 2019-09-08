@@ -13,6 +13,7 @@ header li a {
 }
 .btn-primary {
   background-color: #CEF09D;
+
 }
 .float-right{
   float:right;
@@ -21,6 +22,116 @@ header li a {
   float:left;
 }
 .fondo {
+}
+  /* login.html*/
+
+.row{
+  width: 100%;
+  height: 100%;
+  background-color: #B8ECD7;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+  .login_page{
+     width: 80%;
+      height:80%;
+      background-color: #B1E001;
+      text-align: center;
+      margin-top: 10%;
+      margin-left: 10%;
+      margin-top:5px;
+
+            }
+login_container .logo{
+   width: 1px;
+   height: 1px;
+  }
+
+
+#exampleInputEmail1{
+  text-align: left;
+}
+
+#exampleInputPassword1{
+ text-align: left;
+}
+
+#exampleCheck1{
+
+}
+/*REGISTRATE.html*/
+
+.logo-header{
+  text-align: center;
+}
+
+.register{
+   width: 100%;
+   height:100%;
+   background-color: #B1E001;
+   text-align: center;
+}
+.form-group{
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.Registracion{
+  background-color: #B8ECD7;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.btn-primary{
+margin-left: 420px;
+}
+
+.numeros_contacto{
+  width: 100%;
+  height: 60px;
+  background-color: #B1E001;
+  box-sizing: border-box;
+}
+.contactos{
+  width: 90%;
+  height: 60px;
+  padding-left: 300px;
+
+}
+.caja_contacto{
+  width: 80%;
+  height: 55px
+overflow: hidden;
+}
+.servicios{
+  float: left;
+  padding-left: 80px;
+  color: #083643;
+  text-align: center;
+}
+.container_redes{
+  width: 100%;
+  height: 100%;
+  background-color: #476C5E;
+  box-sizing: border-box;
+}
+.container-footer{
+  width: 90%;
+  height: 90%
+  }
+.caja_contacto_social{
+  width: 80%;
+  height: 80%
+  }
+.caja_contacto_social{
+  width: 70%;
+  height: 70%;
+ margin-left: 200px;
+}
+
+
+
+
   /* background-color: #CEF09D; */
   /* background-color: #476C5E; */
 }
