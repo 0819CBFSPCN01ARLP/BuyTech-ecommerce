@@ -1,0 +1,36 @@
+header{
+  overflow: hidden;
+  background-color: #083643;
+  border-radius:
+}
+header h1 {
+  color:#CEF09D;
+
+}
+header li a {
+  text-decoration: none;
+  color:#CEF09D;
+}
+.btn-primary{
+  color: white;
+  background-color: #18BC9C;
+  border-color: #18BC9C;
+}
+footer {
+  background-color: #083643;
+}
+footer a {
+ text-decoration: none;
+ color: #CEF09D;
+}
+
+section li a, footer a {
+  text-decoration: none;
+  color: #CEF09D;
+}
+section li {
+  height: 3em;
+  background-color: #476C5E;
+  /* padding-top: 0.5em; */
+  padding-top: 0.3em;
+}
