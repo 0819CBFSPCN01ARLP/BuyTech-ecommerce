@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <!-- bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Ionicons -->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:500&display=swap" rel="stylesheet">
+  <!-- mi CSS -->
+  <link rel="stylesheet" href="productos.css">
+  <title>Productos</title>
+</head>
+
+<body>
+  <!-- acá va la barra de navegación -->
+  <header>
+    <header>
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <!-- <h5 class="my-0 mr-md-auto font-weight-normal"></h5> -->
+        <a href="home.html" class="my-0 mr-md-auto"><img src="img/logo-lg.png" alt="" width=100vw></a>
+
+        <nav class="navbar navbar-light">
+          <form class="form-inline">
+            <button class="btn btn-none my-2 my-sm-0" type="submit"><ion-icon ios="ios-search" md="md-search"></ion-icon></button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+          </form>
+        <!-- </nav> barra de buscador -->
+
+        <nav class="my-2 my-md-0">
+          <a class="p-2 text-dark" href="#">registro</a>
+          <a class="p-2 text-dark" href="#">login</a>
+        </nav>
+
+        <div class="dropdown mr-md-3">
+          <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">productos</a>
+            <a class="dropdown-item" href="#">o redirección a carrito no se</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Perfil</a>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- acá va la barra de filtro y ubicación (compus -> asus -> etc) -->
+
+      <!-- acá va el cuerpo de  la pagína, lista de productos -->
+      <main>
+
+        <nav  id="listado" class="">
+          <div class="">
+
+            <ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>
+          </div>
+        </nav>
+
+        <section id="productos"class="">
+          <div class= "row">
+            <div class="card col-md-4 d-sm-flex">
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDx5tolT4v3KOR4pO7XRkXr9zvtPamz5JbnQVIee4es7wHV8Yv" class="card-img" alt="Notebook HP">
+                </div>
+                <div class="col-8">
+                  <h5 class="card-title">Título del producto</h5>
+                  <h4 class="card-price">$$$</h4>
+                  <p class="card-text">Acá va una descripción corta</p>
+                  <p class="card-text"><small class="text-muted">  </small></p>
+                  <ion-icon name="heart" class="favorito"></ion-icon>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md-4 d-sm-flex">
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDx5tolT4v3KOR4pO7XRkXr9zvtPamz5JbnQVIee4es7wHV8Yv" class="card-img" alt="Notebook HP">
+                </div>
+                <div class="col-8">
+                  <h5 class="card-title">Título del producto</h5>
+                  <h4 class="card-price">$$$</h4>
+                  <p class="card-text">Acá va una descripción corta</p>
+                  <p class="card-text"><small class="text-muted">  </small></p>
+                  <ion-icon name="heart" class="favorito"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <nav aria-label="mt-md-3" class="mt-md-3">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><<</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">>></a>
+            </li>
+          </ul>
+        </nav>
+
+      </main>
+      <!-- acá va el footer -->
+      <footer>
+      </footer>
+    </body>
+    </html>
