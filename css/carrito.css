@@ -1,0 +1,37 @@
+header{
+  overflow: hidden;
+  background-color: #083643;
+
+}
+header h1 {
+  color:#CEF09D;
+
+}
+header li a {
+  text-decoration: none;
+  color:#CEF09D;
+}
+.btn-primary {
+  background-color: #CEF09D;
+}
+.float-right{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+
+footer {
+  background-color: #083643;
+}
+footer a {
+  text-decoration: none;
+  color: #CEF09D;
+}
+
+.imagen{
+  max-width: 20vw;
+}
+.bordes{
+  border: 1px solid white;
+}
