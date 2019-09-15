@@ -35,3 +35,15 @@ footer a {
 .bordes{
   border: 1px solid white;
 }
+
+#total{
+  
+  border: 1px solid #083643;
+  color: #083643;
+  background-color: #EAE8E8;
+}
+.fondoAzul{
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #083643;
+}
