@@ -56,7 +56,12 @@ header li a {
   border: 1px solid #CEF09D;
 
 }
-img.categoria
+h2 a {
+  text-decoration: none;
+}
+#linkAProductos{
+  text-decoration: none;
+}
 section li a, footer a {
   text-decoration: none;
   color: #CEF09D;
