@@ -15,7 +15,9 @@ font-family: 'Roboto', sans-serif;
 #perfil{
   max-width: 100px;
 }
-
+a {
+  text-decoration: none;
+}
   .gb-my-account-user-close{
     text-align: center;
   }
