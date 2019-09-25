@@ -1,111 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    <link rel="stylesheet" href="css/logincss.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
-    <title>BuyTech! Login</title>
-  </head>
-  <body>
-    <header class="rounded-bottom container-fluid p-3  ">
-      <h1 class="p-1 mx-3  float-left"> <a href="home.html">BuyTech</a></h1>
-      <nav id="navbar" class="d-none d-lg-flex justify-content-end pb-2 float-right">
-        <ul class=" nav d-xs-none d-sm-none d-md-none d-lg-flex justify-content-end p-2">
-          <li class="nav-item">
-            <a class="nav-link " href="LOGIN.html">LOGIN</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="REGISTRATE.html">REGISTRATE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="carrito.html">CARRITO DE COMPRAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="PERFIL.html">PERFIL DE USUARIO</a>
-          </li>
-        </ul>
-      </nav>
-      <a class="mt-2 d-block d-md-none float-right" href="#navbarMobile"> <button type="button" class="btn btn-primary mt-2 d-block d-md-none float-right" name="button"> <i class="icon ion-md-menu"></i></button></a>
-      <a class="mt-2 d-none d-md-block d-lg-none float-right" href="#navbarMobile"> <button type="button" class="btn btn-primary  mt-2 d-none d-md-block d-lg-none float-right" name="button"><i class="icon ion-md-menu"></i></button></a>
-    </header>
-<section>
-        <div class="container">
-        <div class="login_page">
-          <div class="login">
-           <div class="circulo"></div>
-          <h3 class ="titulo secundario">Inicio de Sesión</h3>
-          <div class="form-group">
-              <div class="usuario-datos">
-          <label for="usuario">Usuario</label>
-          <input type="email" class="form-control" id="usuario" aria-describedby="emailHelp" placeholder="usuario@email.com">
-          <small id="emailHelp" class="usuario"></small>
-          </div>
-         <div class="pass-datos">
-          <label for="contraseña">Contraseña</label>
-          <input type="password" class="form-control" id="contraseña" placeholder="contraseña">
-          <small id="emailHelp" class="contraseña"></small>
-         </div>
-        <div class="login-form">
-        <a href="forgotten-password" class = "btn btn link" id = "forgotten-password">He olvidado mi contraseña?</a>
-     </div>
-    </div>
-    <button type="submit" id="iniciosecion" class="btn btn-primary">Iniciar Sesión</button>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="img/ofertas.png" class="d-block w-100 img-responsive" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="img/ofertas2.png" class="d-block w-100 img-responsive" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="img/ofertas.png" class="d-block w-100 img-responsive" alt="...">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-    </section>
-    <footer class="container-fluid p-3 mt-3 d-flex justify-content-center">
-      <nav id="navbar" class="d-flex justify-content-center">
-        <ul class=" nav  row justify-content-around p-2">
-          <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-            <a class="nav-link  text-center " href="#">NOSOTROS</a>
-          </li>
-          <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-            <a class="nav-link  text-center " href="#">CONTACTO</a>
-          </li>
-          <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-            <a class="nav-link  text-center " href="carrito.html">CARRITO DE COMPRAS</a>
-          </li>
-          <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-            <a class="nav-link   text-center " href="faq.html">PREGUNTAS FRECUENTES</a>
-          </li>
-        </ul>
-      </nav>
+<?php require("est/head.php") ?>
+<body>
+  <?php require("est/header.php") ?>
 
-    </footer>
-    </body>
-  </html>
+  <section class="text-center">
+    <form class="form-signin" method="post">
+      <img class="mb-4" src="img/logo-lg.png" alt="" width="100" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordarme
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit">Sign in</button><br><br>
+      <a href="#">He olvidado mi contraseña</a><br>
+      <p class="mt-5 mb-3 text-muted">© BuyTech - 2019</p>
+    </form>
+  </section>
+
+  <?php require("est/footer.php") ?>
+</body>
+</html>

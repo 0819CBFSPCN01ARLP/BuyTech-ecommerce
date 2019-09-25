@@ -14,27 +14,7 @@
   <title>BuyTech! Login</title>
 </head>
   <body>
-     <header class="rounded-bottom container-fluid p-3  ">
-       <h1 class="p-1 mx-3  float-left"><a href="home.html">BuyTech</a> </h1>
-       <nav id="navbar" class="d-none d-lg-flex justify-content-end pb-2 float-right">
-         <ul class=" nav d-xs-none d-sm-none d-md-none d-lg-flex justify-content-end p-2">
-           <li class="nav-item">
-             <a class="nav-link " href="LOGIN.html">LOGIN</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link " href="REGISTRATE.html">REGISTRATE</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link " href="carrito.html">CARRITO DE COMPRAS</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link " href="PERFIL.html">PERFIL DE USUARIO</a>
-           </li>
-         </ul>
-       </nav>
-       <a class="mt-2 d-block d-md-none float-right" href="#navbarMobile"> <button type="button" class="btn btn-primary mt-2 d-block d-md-none float-right" name="button"> <i class="icon ion-md-menu"></i></button></a>
-       <a class="mt-2 d-none d-md-block d-lg-none float-right" href="#navbarMobile"> <button type="button" class="btn btn-primary  mt-2 d-none d-md-block d-lg-none float-right" name="button"><i class="icon ion-md-menu"></i></button></a>
-     </header>
+    <?php require("est/header.php") ?>
     <div class="container">
 
         <div class="row">
@@ -240,23 +220,5 @@
 
       </div>
       </body>
-      <footer class="container-fluid p-3 mt-3 d-flex justify-content-center">
-        <nav id="navbar" class="d-flex justify-content-center">
-          <ul class=" nav  row justify-content-around p-2">
-            <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-              <a class="nav-link  text-center " href="#">NOSOTROS</a>
-            </li>
-            <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-              <a class="nav-link  text-center " href="#">CONTACTO</a>
-            </li>
-            <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-              <a class="nav-link  text-center " href="carrito.html">CARRITO DE COMPRAS</a>
-            </li>
-            <li class="nav-item  col-xs-12 col-md-6 col-lg-3">
-              <a class="nav-link   text-center " href="faq.html">PREGUNTAS FRECUENTES</a>
-            </li>
-          </ul>
-        </nav>
-
-      </footer>
+      <?php require("est/footer.php") ?>
 </html>

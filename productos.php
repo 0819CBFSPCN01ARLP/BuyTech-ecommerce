@@ -40,7 +40,7 @@
       </div>
     </nav>
 
-    <section class="col-md-10 d-flex row">
+    <section class="col-md-10 row">
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
         <img src="https://images.fravega.com/s250/438f0f480558b68580f361267d598856.jpg" class="card-img-top" alt="...">
         <div class="card-body">
