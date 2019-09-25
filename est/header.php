@@ -1,4 +1,4 @@
-<header>
+<header class="sticky-top">
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="home.html"> <img src="img/logo-lg.png" alt="BuyTech" width="100vw"> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
