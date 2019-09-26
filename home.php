@@ -1,11 +1,23 @@
+<?php  
+  $rutaCss = "css/homestyle.css";
+  $titulo = "BuyTech Home";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<<<<<<< HEAD
 
 <?php require_once("est/head.php") ?>
 
 <body>
 
   <?php require("est/header.php") ?>
+=======
+<?php require_once("est/head.php") ?>
+<body style="width:100vw;"class="container-fluid m-0 p-0">
+  <?php require_once("est/header.php") ?>
+>>>>>>> 5cc170de1b31f42bdcdb1148a1c22a28b957c7c8
 
   <div class="bd-example">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">

@@ -1,3 +1,9 @@
+<?php 
+  $rutaCss = "logincss.css";
+  $titulo = "Log in";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require("est/head.php") ?>

@@ -1,3 +1,8 @@
+<?php
+  $rutaCss = "css/carrito.css";
+  $titulo = "Carrito";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require("est/head.php") ?>

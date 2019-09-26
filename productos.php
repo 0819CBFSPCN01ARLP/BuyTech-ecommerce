@@ -1,3 +1,7 @@
+<?php
+  $titulo = "Nuestros Productos";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require("est/head.php") ?>
@@ -6,7 +10,7 @@
 
   <!-- acá va el cuerpo de  la pagína, lista de productos -->
   <main class="container-fluid d-flex" style="padding-left: 0px;padding-right: 0px;">
-    <nav class="col-md-2 col-lg-2 d-inline d-sx-none d-sm-none d-md-block bg-light container m-0">
+    <nav class="col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block bg-light container m-0">
       <div class="">
         <ul class="nav flex-column">
           <li class="nav-item">
