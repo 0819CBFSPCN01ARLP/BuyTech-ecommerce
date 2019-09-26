@@ -1,4 +1,4 @@
-<?php 
+<?php
   $rutaCss = "logincss.css";
   $titulo = "Log in";
 ?>
@@ -23,7 +23,7 @@
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
       </div>
-      <button class="btn btn-lg btn-primary" type="submit">Sign in</button><br><br>
+      <button class="btn btn-lg btn-primary" type="submit">Ingresar</button><br><br>
       <a href="#">He olvidado mi contraseña</a><br>
       <p class="mt-5 mb-3 text-muted">© BuyTech - 2019</p>
     </form>
