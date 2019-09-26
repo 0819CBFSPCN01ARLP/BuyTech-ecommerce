@@ -1,3 +1,8 @@
+<?php 
+  $titulo = "Detalle";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require("est/head.php") ?>

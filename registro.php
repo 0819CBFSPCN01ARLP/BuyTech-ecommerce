@@ -1,3 +1,8 @@
+<?php
+  $rutaCss = "css/registrocss.css";
+  $titulo = "Crea tu cuenta";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require_once("est/head.php") ?>

@@ -14,6 +14,6 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:500&display=swap" rel="stylesheet">
   <!-- mi CSS -->
-  <link rel="stylesheet" href="<?=$rutaCss?>">
+  <link rel="stylesheet" href=<?=$rutaCss?>>
   <title><?=$titulo?></title>
 </head>
