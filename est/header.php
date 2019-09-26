@@ -11,7 +11,6 @@
       </form>
       <ul class="navbar-nav mr-auto float-right">
         <li class="nav-item active">
-<<<<<<< HEAD
           <a class="nav-link" href="login.php">Ingresar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -19,15 +18,6 @@
         </li>
 
         <!-- <li class="nav-item dropdown">
-=======
-          <a class="nav-link" href="login.php"><ion-icon name="person"></ion-icon> Log in <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registro.php"><ion-icon name="cart">ho</ion-icon>Creá tu cuenta</a>
-        </li>
-
-        <li class="nav-item dropdown">
->>>>>>> 5cc170de1b31f42bdcdb1148a1c22a28b957c7c8
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
             <a class="dropdown-item" href="#">Action</a>

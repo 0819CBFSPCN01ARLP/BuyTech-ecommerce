@@ -1,5 +1,5 @@
 <?php
-  $rutaCss = "css/registrocss.css";
+  $rutaCss = "";
   $titulo = "Crea tu cuenta";
 ?>
 

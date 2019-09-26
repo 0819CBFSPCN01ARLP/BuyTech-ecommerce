@@ -14,12 +14,6 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:500&display=swap" rel="stylesheet">
   <!-- mi CSS -->
-<<<<<<< HEAD
-  <link rel="stylesheet" href="">
-  <!-- como conecto carpeta de bootstrap? -->
-  <title>Detalle</title>
-=======
-  <link rel="stylesheet" href=<?=$rutaCss?>>
+  <link rel="stylesheet" href=<?=$rutaCss?> >
   <title><?=$titulo?></title>
->>>>>>> 5cc170de1b31f42bdcdb1148a1c22a28b957c7c8
 </head>
