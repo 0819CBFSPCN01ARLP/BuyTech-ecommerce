@@ -1,125 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require_once("est/head.php") ?>
-<body class="container-fluid">
+<body class="">
 
-<?php require_once("est/header.php") ?>
+  <?php require_once("est/header.php") ?>
 
-  <!-- <div class="container">
-    <section class="">
-      <div class="col-12 mx-auto">
-        <h2 class="text-center">Registrate | ¿Ya tenés una cuenta?  </h3>
+  <main class="text-center pt-5">
+    <div class="">
+      <form class="form-signin" action="validaciones.php" method="post" enctype="multipart/form-data">
+        <!-- <img class="mb-4" src="img/logo-lg.png" alt="" width="100" height="100"> -->
+        <h1 class="h3 mb-3 font-weight-normal">Creá tu cuenta</h1>
+
+        <div class="p-1">
+          <label for="" class="sr-only">Nombre</label>
+          <input type="" id="" class="" name="name" placeholder="Nombre" required=""><br>
         </div>
-        <form>
-          <div class="form-group">
-            <label for="nombre">Nombre*</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="apellido">Apellido*</label>
-            <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="direccion">Direccion</label>
-            <input type="text" class="form-control" id="direccion" placeholder="Direccion">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="Numero">Numero</label>
-            <input type="number" class="form-control" id="Numero" placeholder="Numero">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="piso/departamento">Piso/Departamento</label>
-            <input type="text" class="form-control" id="piso/departamento" placeholder="Piso/Departamento">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="ciudad">Ciudad</label>
-            <input type="text" class="form-control" id="ciudad" placeholder="Ciudad">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="provincia">Provincia</label>
-            <input type="text" class="form-control" id="provincia" placeholder="Provincia">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="codigopostal">Codigo Postal</label>
-            <input type="codigopostal" class="form-control" id="codigopostal" placeholder="Codigo Postal">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
 
-          </div>
-          <div class="form-group">
-            <label for="telefono">Telefono</label>
-            <input type="tel" class="form-control" id="telefono" placeholder="Telefono">
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="email">E-email*</label>
-            <input type="email" class="form-control" id="email" placeholder="E-mail"required>
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="email">Contraseña*</label>
-            <input type="password" class="form-control" id="password" placeholder="Contraseña"required>
-            <small id="emailHelp" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="Pais">Pais*</label>
-            <select class="pais" required>
-              <option value>Por favor, seleccione una opción</option>
-              <option value="ar">Argentina</option>
-              <option value="br">Brasil</option>
-              <option value="Pr">Paraguay</option>
-              <option value="Bo">Bolivia</option>
-              <option value="Pe">Perú</option>
-              <option value="ur">Uruguay</option>
-            </select>
-
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Declaro conocer y aceptar los Terminos y Condiciones y la Politica de Privacidad y Seguridad
-              </label>
-            </div>
-          </div>
-          <button type="Guardar" id="save" class="btn btn-primary" >Guardar</button>
-        </form>
-
-        <div class="">
-
+        <div class="p-1">
+          <label for="" class="sr-only">Apellido</label>
+          <input type="" id="" class="" name="lastname" placeholder="Apellido" required=""><br>
         </div>
-        <div class="container">
 
-          <div class="numeros_contacto row">
-            <div class="col-lg-3 col-md-3" >
-              <ion-icon name="call"></ion-icon>
-              <b class ="text-sm-right">Call Center</b><br/><a href="#">+54 11 8888-4444</a>
-            </div>
-            <div class="col-lg-3 col-md-3">
-              <ion-icon name="call"></ion-icon>
-              <b>Ventas</b><br/><a href="#">+54 11 8888-5555</a>
-            </div>
-            <div class="col-lg-3 col-md-3">
-              <ion-icon name="call"></ion-icon>
-              <b>Post-Venta</b><br/><a href="#">+54 11 8888-6666</a>
-            </div>
-            <div class="col-lg-3 col-md-3">
-              <ion-icon name="call"></ion-icon>
-              <b>Soporte Tecnico</b><br/><a href="#">+54 11 8888-7777</a>
-            </div>
-          </div>
-        </section>
-      </div> -->
+        <div class="p-1">
+          <label for="inputUsername" class="sr-only">Email</label>
+          <input type="username" id="inputUsername" name="email" class="" placeholder="Email" required=""><br>
+        </div>
 
+        <div class="p-1">
+          <label for="inputPassword" class="sr-only">Contraseña</label>
+          <input type="password" id="inputPassword" class="" name="password" placeholder="Contraseña" required=""><br>
+        </div>
 
-      <?php require("est/footer.php") ?>
-    </body>
-    </html>
+        <div class="p-1">
+          <label for="inputImg" class="sr-only">Selecciona una imagen de perfil</label>
+          <input type="file" name="profile" value=""><br>
+        </div>
+
+        <div class="checkbox p-1">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordarme
+          </label>
+        </div>
+        <input class="btn btn-lg btn-primary" type='submit' name='Submit' value='Crear cuenta' />
+        <p class="mt-5 mb-3 text-muted">© BuyTech - 2019</p>
+      </form>
+    </div>
+  </main>
+
+<?php require("est/footer.php") ?>
+</body>
+</html>

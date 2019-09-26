@@ -14,6 +14,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:500&display=swap" rel="stylesheet">
   <!-- mi CSS -->
-  <link rel="stylesheet" href="css/productos.css">
+  <link rel="stylesheet" href="">
+  <!-- como conecto carpeta de bootstrap? -->
   <title>Detalle</title>
 </head>
