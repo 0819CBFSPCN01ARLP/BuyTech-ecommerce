@@ -6,28 +6,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php require_once("est/head.php") ?>
-<body style="width:100vw;"class="container-fluid m-0 p-0">
+<body>
 <?php require("est/header.php") ?>
 
   <body>
-    <section id="navbarMobile" class="row mt-3 d-block d-lg-none">
-      <nav id="navbar" class="">
-        <ul class=" nav  d-flex flex-column justify-content-end pb-5">
-          <li class="nav-item ">
-            <a class="nav-link text-center " href="LOGIN.html">LOGIN</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-center " href="REGISTRATE.html">REGISTRATE</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-center " href="carrito.html">CARRITO DE COMPRAS</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text-center " href="#">PERFIL DE USUARIO</a>
-          </li>
-        </ul>
-      </nav>
-
     </section>
     <div id="sectioncontainer" class="row px-2">
 

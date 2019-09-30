@@ -1,9 +1,9 @@
 <?php
   $rutaCss = "";
   $titulo = "Crea tu cuenta";
-  require_once("funciones.php");
+  require("funciones.php");
   nuevoUsuario();
-  validarNombre();
+  mailExiste();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
   <main class="text-center pt-5">
     <div class="">
-      <form class="form-signin" action="" method="post" enctype="multipart/form-data">
+      <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
         <!-- <img class="mb-4" src="img/logo-lg.png" alt="" width="100" height="100"> -->
         <h1 class="h3 mb-3 font-weight-normal">Creá tu cuenta</h1>
 

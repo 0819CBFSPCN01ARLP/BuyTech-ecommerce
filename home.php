@@ -1,5 +1,5 @@
 <?php
-  $rutaCss = "css/homestyle.css";
+  $rutaCss = "";
   $titulo = "BuyTech Home";
 ?>
 
@@ -14,7 +14,7 @@
   <?php require("est/header.php") ?>
 
   <div class="bd-example">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide vh-50" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
