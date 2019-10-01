@@ -29,14 +29,15 @@
 <form class="form-inline my-2 my-md-0">
   <input class="form-control" type="text" placeholder="Buscar">
 </form>
-<?php if(!isset($_SESSION[""])): ?>
+<?php if(!isset($_SESSION["usuario"])): ?>
 <!-- codigo para usuario no logueado -->
 <a class="dropdown-item p-2" href="registro.php">Creá tu cuenta</a>
 <a class="dropdown-item p-2" href="login.php">Ingresá</a>
 <?php else: ?>
 <!-- codigo para usuario logueado -->
-<a class="dropdown-item p-2" href="perfil.php"><ion-icon name="person"></ion-icon></a>
-<a class="dropdown-item p-2" href="carrito.php"><ion-icon name="cart"></ion-icon></a>
+<a class="dropdown-item p-2" href="perfil.php">Perfil<ion-icon name="person"></ion-icon></a>
+<a class="dropdown-item p-2" href="carrito.php">Carrito <ion-icon name="cart"></ion-icon></a>
+<a class="dropdown-item p-2 text-muted text-decoration-none" href="logout.php">Salir</a>
 <?php endif ?>
 </div>
 </header>

@@ -1,22 +1,25 @@
 <?php
 
 function nuevoUsuario(){
-$usuarioNuevo = [
-  "name" => $_POST["name"],
-  "lastname" => $_POST["lastname"],
-  "email" => $_POST["email"],
-  "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+  $usuariosArray = [];
+  //guardo en variable lo que obtengo del json
+  $usuarios=file_get_contents("usuarios.json");
+  //decodifico el array de usuarios guardados
+  $usuariosArray=json_decode($usuarios,true);
+  //agrego al array de usuarios, el array del usuario nuevo
+  $usuarioNuevo = [
+    "id" => count($usuariosArray),
+    "name" => $_POST["name"],
+    "lastname" => $_POST["lastname"],
+    "email" => $_POST["email"],
+    "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
   ];
-//guardo en variable lo que obtengo del json
-$usuarios=file_get_contents("usuarios.json");
-//decodifico el array de usuarios guardados
-$usuariosArray=json_decode($usuarios,true);
-//agrego al array de usuarios, el array del usuario nuevo
-$usuariosArray[]=$usuarioNuevo;
-//agrego al array de usuarios el nuevo y lo codifico en json
-$usuariosFinal=json_encode($usuariosArray,JSON_PRETTY_PRINT);
-//envio el string a guardar
-file_put_contents("usuarios.json",$usuariosFinal);
+
+  $usuariosArray[] = $usuarioNuevo;
+  //agrego al array de usuarios el nuevo y lo codifico en json
+  $usuariosFinal=json_encode($usuariosArray,JSON_PRETTY_PRINT);
+  //envio el string a guardar
+  file_put_contents("usuarios.json",$usuariosFinal);
 }
 
 function mailExiste(){

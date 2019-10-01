@@ -11,7 +11,7 @@ $password = trim($_POST ["password"]);
 if(empty($email)){
   $errores ["errorEmail"] = "El Email es Obligatorio";
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-$errores ["errorEmail"] = "Ingrese una direccion de correo valida";
+  $errores ["errorEmail"] = "Ingrese una direccion de correo valida";
 }
 
 //Validaciones de la contrasenia

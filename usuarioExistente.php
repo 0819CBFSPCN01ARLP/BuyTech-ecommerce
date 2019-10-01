@@ -3,9 +3,9 @@ function validarUsuarioExistente(){
   //si existe el archivo con los usuarios
 if (file_exists($pathUusarios)){
 
-    $arrayUusarios = [ ];
+    $arrayUsuarios = [ ];
 
-$usuarios=file_get_contents("/json/usuarios.json");
+$usuarios=file_get_contents("usuarios.json");
 
 $usuariosArray=json_decode($usuarios,true);
 

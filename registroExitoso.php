@@ -1,7 +1,6 @@
-<?php require_once("est/head.php") ?>
 <?php
-$rutaCss = "css/carrito.css";
-$titulo = "registroExistoso";
+
+$titulo = "Registro exitoso";
 
 
 
@@ -11,21 +10,22 @@ $titulo = "registroExistoso";
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Registro Exitoso</title>
-
-  </head>
+<?php require_once("est/head.php") ?>
   <body>
     <?php require_once("est/header.php") ?>
 
-    <h2>El Registro ha sido Exitoso!</h2>
-    <div class="" text-aling = center;>
-      <ul class="navbar-nav mr-auto float-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="perfil.php">Mis Datos<span class="sr-only">Por favor complete sus datos personales aqui</span></a>
-      </li>
-      </ul>
+    <h1 class="justify-center mx-auto my-3" >El registro ha sido exitoso!</h1>
+    <div class="row">
+
+      <div class="col-xs-12 col-md-4 mx-auto my-3" text-align = center>
+        <ul class="navbar-nav mx-auto float-right">
+          <li class="nav-item active">
+            <h3>Completá tu perfil <a class="text-decoration-none nav-link" href="perfil.php">aquí</a> </h2>
+          </li>
+          <li class="nav-item active "><h3>O ingresá a <a class="nav-link tex-decoration-none" href="login.php"> tu cuenta</a></h3>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <?php require("est/footer.php") ?>

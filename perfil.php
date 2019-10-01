@@ -1,4 +1,5 @@
 <?php
+session_start();
 $rutaCss = "css/perfil.css";
 $titulo = "Mi perfil";
 require("funciones.php");

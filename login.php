@@ -1,32 +1,32 @@
 <?php
+  session_start();
+
   $rutaCss = "logincss.css";
-<<<<<<< HEAD
-  $titulo = "Log in";
-=======
+
   $titulo = "Ingresar";
   require("funciones.php");
 
-?>
->>>>>>> 855b491ff94f384ac5bf8c9e34d1f980db2fc1cf
+
 
 require_once "validacionLogin.php";
 
 $email = null;
 
-
-if(count($_POST)){
+//Cambio count por sólo $_POST acá y en línea 22
+if($_POST){
 
   $email = trim($_POST ["email"]);
 
-//erroy de errores
+//array de errores
 
-$erroresRegistro = validarLogin();
+  $erroresRegistro = validarLogin();
 
 //Si no hay error
-if ( !count($erroresRegistro)){
-  header("location: home.php");
-  exit;
-}
+  if ( empty($erroresRegistro)){
+    $_SESSION["usuario"] = $email;
+    header("location: home.php");
+    exit;
+  }
 }
 
 
@@ -54,14 +54,14 @@ if ( !count($erroresRegistro)){
       <!-- <img class="mb-4" src="img/logo-lg.png" alt="" width="100" height="100"> -->
       <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
 
-<<<<<<< HEAD
+
       <label for="inputUsername" class="sr-only">Email</label>
       <input type="username" id="inputUsername" class="" placeholder="Email"   name ="email" value="<?php echo $email;?>" ><br>
 
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="" placeholder="Contraseña" name="password"value="">
-=======
-      <div class="p-2">
+
+      <!-- <div class="p-2">
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="email" id="inputEmail" class="" placeholder="Email" required="" autofocus=""><br>
       </div>
@@ -69,9 +69,9 @@ if ( !count($erroresRegistro)){
       <div class="">
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="" placeholder="Contraseña" required="">
-      </div>
+      </div> -->
 
->>>>>>> 855b491ff94f384ac5bf8c9e34d1f980db2fc1cf
+
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Recordarme

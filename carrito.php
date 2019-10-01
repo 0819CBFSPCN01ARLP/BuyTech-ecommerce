@@ -1,4 +1,5 @@
 <?php
+session_start();
   $rutaCss = "css/carrito.css";
   $titulo = "Carrito";
 ?>

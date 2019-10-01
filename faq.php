@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $rutaCss = "css/faqcss.css";
   $titulo = "Preguntas frecuentes - FAQ";
 ?>
