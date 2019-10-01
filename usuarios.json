@@ -57,5 +57,26 @@
         "lastname": "lss",
         "email": "sl@hl.com",
         "password": "$2y$10$Og.hDf1U4oXzRG7T8.IeEOBv4km2KxfSrbWgKiS.xj7dWSSDsDerC"
+    },
+    {
+        "id": 9,
+        "name": "doc moreno",
+        "lastname": "more",
+        "email": "elmore@este.com",
+        "password": "$2y$10$KEG\/yVGWucxWxDCd7Jwpj.Al0HtQEwxss7iAfHy3Y70cmO88ZFQaW"
+    },
+    {
+        "id": 10,
+        "name": "asd",
+        "lastname": "lss",
+        "email": "sl@hl.com",
+        "password": "$2y$10$JWdFWpvePPtvghFtnaAA7OJokIWuVaXNeHuw.1j5EcZNZBCgx.2Yy"
+    },
+    {
+        "id": 11,
+        "name": "as",
+        "lastname": "aaa",
+        "email": "sl@hl.com",
+        "password": "$2y$10$yXEBIhEI7NwRKFk4VtbV6uzanEgNeYFV7bZtzWm40zFAoWdPkKSAO"
     }
 ]

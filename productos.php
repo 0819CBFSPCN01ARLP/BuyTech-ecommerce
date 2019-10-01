@@ -52,7 +52,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
@@ -61,7 +61,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
@@ -70,7 +70,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
@@ -79,7 +79,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
@@ -88,7 +88,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
@@ -97,7 +97,7 @@
           <h5 class="card-title">Marca y modelo</h5>
           <h6 class="price"> $$$ </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.html" class="btn btn-primary">Ver detalle</a>
+          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
 

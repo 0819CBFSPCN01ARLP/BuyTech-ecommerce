@@ -24,11 +24,15 @@ function nuevoUsuario(){
 
 function mailExiste(){
   $emailExistente= "Ya existe una cuenta asociada a este email";
+  $emailNoExistente = 1;
   $usuariosExistentes=file_get_contents("usuarios.json");
   $arrayDeUsuarios=json_decode($usuariosExistentes,true);
   foreach ($arrayDeUsuarios as $usuario) {
     if($_POST["email"] == $usuario["email"]){
       return $emailExistente;
+
+    }else{
+      return $emailNoExistente;
     }
   }
 }
