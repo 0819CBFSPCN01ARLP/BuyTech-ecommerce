@@ -1,6 +1,7 @@
 <?php
   $rutaCss = "";
   $titulo = "Crea tu cuenta";
+<<<<<<< HEAD
 
   //validaciones formulario - archivo con funcion validadora
   require_once "validacionRegistro.php";
@@ -32,6 +33,11 @@ $erroresRegistro = validarRegistro();
 }
 }
 
+=======
+  require("funciones.php");
+  nuevoUsuario();
+  mailExiste();
+>>>>>>> 855b491ff94f384ac5bf8c9e34d1f980db2fc1cf
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +47,7 @@ $erroresRegistro = validarRegistro();
   <?php require_once("est/header.php") ?>
 
   <main class="text-center pt-5">
+<<<<<<< HEAD
     <?php
     //Si existen errores en el formulario, redireccion
      if(isset($erroresRegistro) && count($erroresRegistro)>0):  ?>
@@ -53,6 +60,10 @@ $erroresRegistro = validarRegistro();
       <?php endif; ?>
 
       <form class="form-signin" action="" method="post" enctype="multipart/form-data">
+=======
+    <div class="">
+      <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+>>>>>>> 855b491ff94f384ac5bf8c9e34d1f980db2fc1cf
         <!-- <img class="mb-4" src="img/logo-lg.png" alt="" width="100" height="100"> -->
             <h1 class="h3 mb-3 font-weight-normal">Creá tu cuenta</h1>
 

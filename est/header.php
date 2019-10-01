@@ -1,31 +1,40 @@
-<header class="sticky-top">
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <a class="navbar-brand" href="home.php"> <img src="img/logo-lg.png" alt="BuyTech" width="100vw"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<header class="navbar navbar-expand-sm navbar-dark bg-light">
+  <div class="">
+    <a class="navbar-brand" href="home.php"><img src="img/logo-lg.png" class="img-fluid w-25" alt=""></a>
+  </div>
+  <button class="navbar-toggler bg-secondary" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse float-right" id="navbarsExample04">
-      <form class="form-inline my-2 my-md-0  margin-center">
-        <input class="form-control" type="text" placeholder="Buscar...">
-      </form>
-      <ul class="navbar-nav mr-auto float-right">
-        <li class="nav-item active">
-          <a class="nav-link" href="login.php">Ingresar<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registro.php">Creá tu cuenta</a>
-        </li>
+  <div class="collapse navbar-collapse" id="navbarsExample03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown03">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+</div>
+</li> -->
+</ul>
+<form class="form-inline my-2 my-md-0">
+  <input class="form-control" type="text" placeholder="Buscar">
+</form>
+<!-- codigo para usuario no logueado -->
+<a class="dropdown-item p-2" href="registro.php">Creá tu cuenta</a>
+<a class="dropdown-item p-2" href="login.php">Ingresá</a>
+<!-- codigo para usuario logueado -->
+<a class="dropdown-item p-2" href="perfil.php"><ion-icon name="person"></ion-icon></a>
+<a class="dropdown-item p-2" href="carrito.php"><ion-icon name="cart"></ion-icon></a>
 
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
-    </div>
-  </nav>
+</div>
 </header>
