@@ -35,9 +35,9 @@
 <a class="dropdown-item p-2" href="login.php">Ingresá</a>
 <?php else: ?>
 <!-- codigo para usuario logueado -->
-<a class="dropdown-item p-2" href="perfil.php">Perfil<ion-icon name="person"></ion-icon></a>
-<a class="dropdown-item p-2" href="carrito.php">Carrito <ion-icon name="cart"></ion-icon></a>
-<a class="dropdown-item p-2 text-muted text-decoration-none" href="logout.php">Salir</a>
+<a class="dropdown-item p-2" href="perfil.php"><ion-icon name="person"></ion-icon></a>
+<a class="dropdown-item p-2" href="carrito.php"><ion-icon name="cart"></ion-icon></a>
+<a class="dropdown-item p-2 text-muted text-decoration-none" href="logout.php">|  Salir</a>
 <?php endif ?>
 </div>
 </header>
