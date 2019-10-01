@@ -26,11 +26,11 @@ require("funciones.php");
             <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos personales</h5>
-              <p class="card-text"><?php echo $_POST[name] ?></p>
-              <p class="card-text"><?php echo $_POST[lastname]?></p>
-              <p class="card-text"><?php echo $_POST[email]?></p>
-              <p class="card-text"><?php echo $_POST[tel]?></p>
-              <p class="card-text"><?php echo $_POST[birthday]?></p>
+              <p class="card-text">Nombre</p>
+              <p class="card-text">Apellido</p>
+              <p class="card-text">Email</p>
+              <p class="card-text">Celular</p>
+              <p class="card-text">Fecha de nacimiento</p>
               <a href="perfil-edit.php">Editar</a>
             </div>
 
