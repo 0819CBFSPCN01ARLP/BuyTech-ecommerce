@@ -20,7 +20,7 @@ $usuariosArray=json_decode($usuarios,true);
   }
     }
 
-  return validarUsuario();
+  return validarUsuarioExistente(); //retornar ese array,
 
 
 }

@@ -23,7 +23,7 @@ function nuevoUsuario(){
 }
 
 function mailExiste(){
-  $emailExistente= "Ya existe una cuenta asociada a este email";
+  $emailExistente= "Ya existe una cuenta asociada a este email"; //DEVOLVER BOOLEANOS
   $emailNoExistente = 1;
   $usuariosExistentes=file_get_contents("usuarios.json");
   $arrayDeUsuarios=json_decode($usuariosExistentes,true);

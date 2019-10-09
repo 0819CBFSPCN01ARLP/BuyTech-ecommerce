@@ -10,10 +10,10 @@
   require_once "usuarioExistente.php";
 
 //declaramos las variables vacias para la primera vez que se ingresa
- $name = null;
- $lastname = null;
- $email= null;
- $password= null;
+  $name = null;
+  $lastname = null;
+  $email= null;
+  $password= null;
 //validacion cuando el usuario ingresa los datos y existe $_POST
 if(!empty($_POST)){
 
@@ -24,20 +24,21 @@ if(!empty($_POST)){
 
 //guardar los errores que retorne la funcion validadadora;
 
-$erroresRegistro = validarRegistro();
+  $erroresRegistro = validarRegistro();
 // $erroresUsuarioExistente = validarUsuario();
 
 
 //Luego si no hay errores en el $errorRegistro, redireccion:
- if( !count($erroresRegistro)&& !count($validarUsuario)){
+  if( !count($erroresRegistro)&& !count($validarUsuario)){
+  nuevoUsuario();
 
-   mailExiste();
-
-   nuevoUsuario();
-
-}
+// VER ACÁ EL PROBLEMA DE LA REDIRECCION A REGISTRO EXITOSO
   header("location:registroExitoso.php");
   exit;
+  }elseif (count($erroresRegistro) && count($validarUsuario)) {
+    header("location:registro.php");
+  }
+
 }
 ?>
 

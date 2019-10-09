@@ -24,9 +24,7 @@ function validarRegistro (){
       $errores ["errorEmail"] = "El Email es Obligatorio";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) ){
       $errores ["errorEmail"] = "Ingrese una direccion de correo valida";
-    } elseif (mailExiste() == $emailExistente) {
-      $errores["errorEmail"] = $emailExistente;
-  }
+    } // borre lo de mail existe
 
 
   //Validaciones de la contrasenia

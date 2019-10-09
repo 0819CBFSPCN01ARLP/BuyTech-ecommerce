@@ -78,5 +78,12 @@
         "lastname": "aaa",
         "email": "sl@hl.com",
         "password": "$2y$10$yXEBIhEI7NwRKFk4VtbV6uzanEgNeYFV7bZtzWm40zFAoWdPkKSAO"
+    },
+    {
+        "id": 12,
+        "name": "sasa",
+        "lastname": "12",
+        "email": "s.larsen@hotmail.com.ar",
+        "password": "$2y$10$5hrvL6wFMEe2fntiNQWp\/O6kRmrPl\/Ei4xdDYyg.qxwcpC5OiHwdm"
     }
 ]
