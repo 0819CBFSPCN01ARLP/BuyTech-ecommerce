@@ -4,16 +4,16 @@
   $rutaCss = "logincss.css";
 
   $titulo = "Ingresar";
-  require("funciones.php");
+  // require("funciones.php");
 
 
 
-require_once "validacionLogin.php";
+require_once "validaciones.php";
 
 $email = null;
 
 //Cambio count por sólo $_POST acá y en línea 22
-if($_POST){
+if(count($_POST)){
 
   $email = trim($_POST ["email"]);
 
@@ -22,10 +22,11 @@ if($_POST){
   $erroresRegistro = validarLogin();
 
 //Si no hay error
-  if ( empty($erroresRegistro)){
+  if (!count($erroresRegistro)){
     $_SESSION["usuario"] = $email;
-    header("location: home.php");
+    header("location: perfil.php");
     exit;
+
   }
 }
 

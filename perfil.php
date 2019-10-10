@@ -2,7 +2,7 @@
 session_start();
 $rutaCss = "css/perfil.css";
 $titulo = "Mi perfil";
-require("funciones.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ require("funciones.php");
 <body>
   <?php require("est/header.php") ?>
   <main>
-    <div class="card m-5" style="">
+      <div class="card m-5" style="">
 
       <div class="row no-gutters container p-4">
         <div class="col-sm-0 pt-4 col-md-2">
