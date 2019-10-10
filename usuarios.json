@@ -85,5 +85,89 @@
         "lastname": "12",
         "email": "s.larsen@hotmail.com.ar",
         "password": "$2y$10$5hrvL6wFMEe2fntiNQWp\/O6kRmrPl\/Ei4xdDYyg.qxwcpC5OiHwdm"
+    },
+    {
+        "id": 13,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$EZXIp21qH7mSgX3sPOviYumz5sqaENtJn4mfRDi7h\/D8gt2lA.zLm"
+    },
+    {
+        "id": 14,
+        "name": "prueba",
+        "lastname": "prueba",
+        "email": "prueba@prueba.com",
+        "password": "$2y$10$DoPSAPxRWfJQqHXATrX1muM0Hh5zvF0l20j7FYEgeGTsFhYLJkl.."
+    },
+    {
+        "id": 15,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$WwFiKxr34bz5BukYrzJPLOJLqGmU\/8IMDlF85btzAg0bCdXSn9AuS"
+    },
+    {
+        "id": 16,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$BeranKqeXVGGqJ\/AS5ZGO.Rnlg0\/0xF9BmjpdzwhIz1x6zoiK7klW"
+    },
+    {
+        "id": 17,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$PNwAIvRwS42xb\/aReIMBkei806IYZeAfDT9POeeEJ4VnUS0jETPly"
+    },
+    {
+        "id": 18,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$yvYrCo7qufhopoWOazMbL.Iq9DLugSqPKMBSlk\/u4JuCSdCUuxILG"
+    },
+    {
+        "id": 19,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$OiO182dkRb5b2OO0IKz4EOoneFSHpnBJBTsUVJDPczcZVNfBt4Qa."
+    },
+    {
+        "id": 20,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@gmail.com",
+        "password": "$2y$10$jGWtGLAZr.Ux.i4vxqPbHOUh3QC4g46RZarszufJXsECIfpbBvgE2"
+    },
+    {
+        "id": 21,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "sol.fredes@gmail.com",
+        "password": "$2y$10$gFHWyL0fTW0tz06LDwFKG.bA.RNbyUU0Hen3tTW3x1eUwHGDYnmki"
+    },
+    {
+        "id": 22,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "sol.fredes@sysmel-consulting.com.ar",
+        "password": "$2y$10$FIVFrvhyAIjh1AR6AzZrQObEkDdUmCOEWPAJXsmiSBuixZaFJAPVm"
+    },
+    {
+        "id": 23,
+        "name": "Sol",
+        "lastname": "Fredes",
+        "email": "msol.fredes@hotmail.com",
+        "password": "$2y$10$cEqT0cdv8EfOCw1E5hyIqOUIHce1q4ar6qV6Nb1LtJEKD2oYI7bTu"
+    },
+    {
+        "id": 24,
+        "name": "Pepe",
+        "lastname": "Rosso",
+        "email": "pepe@gmail.com",
+        "password": "$2y$10$kApBfZFKQihaF25x\/65A3eMSS9mRJCgh4Ehig.Hr7phI5.P7r8u6O"
     }
 ]

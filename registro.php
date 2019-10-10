@@ -1,14 +1,12 @@
 <?php
   session_start();
-  require("funciones.php");
+  // require("funciones.php");
   $rutaCss = "";
   $titulo = "Crea tu cuenta";
 
 
   //validaciones formulario - archivo con funcion validadora
-  require_once "validacionRegistro.php";
-  require_once "usuarioExistente.php";
-
+  require_once "validaciones.php";
 //declaramos las variables vacias para la primera vez que se ingresa
   $name = null;
   $lastname = null;
@@ -25,21 +23,18 @@ if(!empty($_POST)){
 //guardar los errores que retorne la funcion validadadora;
 
   $erroresRegistro = validarRegistro();
-// $erroresUsuarioExistente = validarUsuario();
-
 
 //Luego si no hay errores en el $errorRegistro, redireccion:
-  if( !count($erroresRegistro)&& !count($validarUsuario)){
+  if( !count($erroresRegistro)){
   nuevoUsuario();
 
 // VER ACÁ EL PROBLEMA DE LA REDIRECCION A REGISTRO EXITOSO
   header("location:registroExitoso.php");
   exit;
-  }elseif (count($erroresRegistro) && count($validarUsuario)) {
-    header("location:registro.php");
   }
 
 }
+
 ?>
 
 <!DOCTYPE html>
