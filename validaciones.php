@@ -2,14 +2,11 @@
 //validacion errores en el registro
 function validarRegistro (){
           $errores = [];
-
           $name = trim($_POST ["name"]);
           $lastname = trim($_POST ["lastname"]);
           $email = trim($_POST ["email"]);
           $password  =trim($_POST ["password"]);
-
           //Validaciones del Nombre
-
           if(empty($name)){
             $errores ["errorName"] = "El nombre es Obligatorio";
           }
@@ -25,7 +22,6 @@ function validarRegistro (){
             }  else if ( mailExiste()){
               $errores ["mailExistente"]= "Usuario Ya Registrado";
             }
-
           //Validaciones de la contrasenia
 
             if(empty($password)){
@@ -46,12 +42,54 @@ function validarRegistro (){
              else if (!preg_match('`[0-9]`',$password)){
                 $errores ["errorPassword"]  = "La clave debe tener al menos un caracter numérico";
              }
+             //validacion de subida de archivo
+
+                    if (isset($_POST ["profile"])){
+
+                    $name = $_FILES ["imagen"]["name"];
+                    $tmp_name = $_FILES ["imagen"]["tmp_name"];
+                    $error = $_FILES ["imagen"]["error"];
+                    $size = $_FILES ["imagen"]["size"];
+                    $max_size = 1024 * 1024 * 1;
+                    $type = $_FILES ["imagen"]["type"];
+
+
+                          if( $size > $max_size){
+                            $errores ["errorTamaño"] = "El tamaño de la imagen supera el maximo permitido. 1 MB";
+                          }
+                          else if($type != "image/jpg" &&  $type !="image/png" &&  $type !="image/jpeg"){
+                             $errores ["errorTipo"]   = "Archivos permitidos JPG, PNG y JPEG";
+                        }
+                    }
           return $errores;
   }
 
+     //Si el archivo esta ok, se sube archivo
+           function validarImagen(){
+             $resultado = false;
+             if (isset($_POST ["profile"])){
+                   $name = $_FILES ["imagen"]["name"];
+                   $tmp_name = $_FILES ["imagen"]["tmp_name"];
+                   $errores = $_FILES ["imagen"]["error"];
+                   $size = $_FILES ["imagen"]["size"];
+                   $max_size = 1024 * 1024 * 1;
+                   $type = $_FILES ["imagen"]["type"];
+             $imagenGuardada = true;
+             $imagenNoGuardada =false;
+             $resultado = false;
+              $ruta = "files/". $name;
+             if(move_uploaded_file($tmp_name, $ruta)){
+
+               $resultado=  $imagenGuardada;
+             }else{
+               $resultado = $imagenNoGuardada;
+             }
+    }
+            return $resultado;
+      }
 //validar que el mail no exista para crear usuario
   function mailExiste(){
-              $emailExistente= true; //DEVOLVER BOOLEANOS
+              $emailExistente= true;
               $emailNoExistente = false;
               $usuariosExistentes=file_get_contents("usuarios.json");
               $arrayDeUsuarios=json_decode($usuariosExistentes,true);
@@ -67,7 +105,6 @@ function validarRegistro (){
               }
                 return $respuesta;
   }
-
 //si no hay errores en registro y no existe el usuario, se crea nuevo usuarios
 function nuevoUsuario(){
               $usuariosArray = [];
@@ -82,6 +119,7 @@ function nuevoUsuario(){
                 "lastname" => $_POST["lastname"],
                 "email" => $_POST["email"],
                 "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
+
               ];
 
               $usuariosArray[] = $usuarioNuevo;
@@ -89,9 +127,9 @@ function nuevoUsuario(){
               $usuariosFinal=json_encode($usuariosArray,JSON_PRETTY_PRINT);
               //envio el string a guardar
               file_put_contents("usuarios.json",$usuariosFinal);
+                $resultadoImagen = validarImagen();
+                echo $resultadoImagen;
               }
-
-
 
 //Validaciones en login
 
@@ -117,13 +155,6 @@ function passwordExiste(){
 
               return $respuesta;
 }
-
-
-
-
-
-
-
 function validarLogin(){
 
               $errores = [];
@@ -152,16 +183,10 @@ function validarLogin(){
                 else if (!passwordExiste()){
                   $errores ["passwordNoExiste"]= "Contraseña No Valida";
                 }
-
-
               return $errores;
 
 }
 // Validar inicio de Session
-
-
-
-
 
 
  ?>

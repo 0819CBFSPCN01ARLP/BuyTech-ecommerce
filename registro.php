@@ -12,6 +12,7 @@
   $lastname = null;
   $email= null;
   $password= null;
+  $profile = null;
 //validacion cuando el usuario ingresa los datos y existe $_POST
 if(!empty($_POST)){
 
@@ -19,10 +20,18 @@ if(!empty($_POST)){
   $lastname = trim($_POST ["lastname"]);
   $email = trim($_POST ["email"]);
   $password  =trim($_POST ["password"]);
+  $imagen = ($_FILES ["imagen"]);
+
+
+
+
 
 //guardar los errores que retorne la funcion validadadora;
 
   $erroresRegistro = validarRegistro();
+  // $erroresImagen   = validarImagen();
+
+
 
 //Luego si no hay errores en el $errorRegistro, redireccion:
   if( !count($erroresRegistro)){
@@ -34,6 +43,8 @@ if(!empty($_POST)){
   }
 
 }
+
+
 
 ?>
 
@@ -56,7 +67,7 @@ if(!empty($_POST)){
 
       <?php endif; ?>
 
-      <form class="form-signin" action="" method="post" enctype="multipart/form-data">
+      <!-- <form class="form-signin" action="" method="post" enctype="multipart/form-data"> -->
 
     <div class="">
       <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
@@ -89,8 +100,10 @@ if(!empty($_POST)){
             </div>
 
             <div class="p-1">
-              <label for="inputImg" class="sr-only">Subi tu foto</label>
-              <input type="file" name="profile" value="Subi tu Foto"><br>
+              <h4>Subi tu Avatar</h4>
+              <input type="file" name="imagen"value ="<?php echo $imagen;?>"><br>
+              <input type= "hidden" name="profile" value="<?php echo $imagen;?>"><br>
+
             </div>
 
             <div class="checkbox p-1">
@@ -104,7 +117,7 @@ if(!empty($_POST)){
       </form>
       </div>
 
-      </script>
+      <!-- </script> -->
   </main>
 
 <?php require("est/footer.php") ?>

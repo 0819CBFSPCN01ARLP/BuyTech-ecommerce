@@ -169,5 +169,54 @@
         "lastname": "Rosso",
         "email": "pepe@gmail.com",
         "password": "$2y$10$kApBfZFKQihaF25x\/65A3eMSS9mRJCgh4Ehig.Hr7phI5.P7r8u6O"
+    },
+    {
+        "id": 25,
+        "name": "prueba1",
+        "lastname": "prueba1",
+        "email": "prueba1@prueba1.com.ar",
+        "password": "$2y$10$rZaY21BVQyHshN7xoe3G4uYb7KPeuOFlJoWOASR9shoGLxkapgRX."
+    },
+    {
+        "id": 26,
+        "name": "prueba2",
+        "lastname": "prueba2",
+        "email": "prueba2@prueba2.com",
+        "password": "$2y$10$7bY6UDIWxHtcyAbAyzrioeZcaxSMzCYNBDk6I3UdpJplvE7ziWf7u"
+    },
+    {
+        "id": 27,
+        "name": "prueba4",
+        "lastname": "prueba4",
+        "email": "prueba4@prueba4.com",
+        "password": "$2y$10$\/GWd8h9s9z5OSXiLno6iuuL3qfAg.3BC9ZsTtJvU7U7v5s5kYlLA6"
+    },
+    {
+        "id": 28,
+        "name": "vicky",
+        "lastname": "vicky",
+        "email": "vicky@vicky.com",
+        "password": "$2y$10$Nw0CzLoOVO9ARrSkvlz7e.KOgGpACxpKi4dePjSy1Bd3Zqq6Bpfwa"
+    },
+    {
+        "id": 29,
+        "name": "vicky1",
+        "lastname": "vicky1",
+        "email": "vicky1@vicky1.com",
+        "password": "$2y$10$gvP1nKBrFGtk1zFgK37LKOSI7\/WopMpnInj4Oq6kXK\/h3bKNMEwrW"
+    },
+    {
+        "id": 30,
+        "name": "vicky4",
+        "lastname": "vicky4",
+        "email": "vicky4@hotmail.com",
+        "password": "$2y$10$ZEAbMMSnPEH.87Uia.gnTeNm.B5GxN0hCA.2QSu6RALNHppWRiGHO"
+    },
+    {
+        "id": 31,
+        "name": "vicky5",
+        "lastname": "vicky5",
+        "email": "vicky5@vicky5.com",
+        "password": "$2y$10$8.cJDrcEikoBa16w5FA8HOowrEw6pwj3Q7TW1OGbLVLtb9dnjkjQa"
     }
 ]
