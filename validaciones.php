@@ -97,6 +97,7 @@ function nuevoUsuario(){
 
 function passwordExiste(){
 //desencriptar contraseña
+<<<<<<< HEAD
             $passwordExistente= true;
             $passwordNoExistente = false;
             $passwordExistentes=file_get_contents("usuarios.json");
@@ -120,6 +121,13 @@ function passwordExiste(){
 
 
 
+=======
+            $passwordExistentes=file_get_contents("usuarios.json");
+            $arrayDeUsuarios=json_decode($passwordExistentes,true);
+
+
+            }
+>>>>>>> 5b56b7b605388e9059f8f0f5cbfe8699fa547e9b
 
 
 
@@ -143,9 +151,15 @@ function validarLogin(){
                 if(empty($password)){
                   $errores ["errorPassword"] = "Ingrese una Contraseña Valida";
                 }
+<<<<<<< HEAD
                 else if (!passwordExiste()){
                   $errores ["passwordNoExiste"]= "Contraseña No Valida";
                 }
+=======
+                // else if (!passwordExiste()){
+                //   $errores ["passwordNoExiste"]= "Contraseña No Valida";
+                // }
+>>>>>>> 5b56b7b605388e9059f8f0f5cbfe8699fa547e9b
 
               return $errores;
 
