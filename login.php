@@ -24,12 +24,14 @@ if(count($_POST)){
 //Si no hay error
   if (!count($erroresRegistro)){
     $_SESSION["usuario"] = $email;
+    // exit; salgo luego de asegurarme que seteo la cookie
+    if($_POST["remember-me"]){
+      setcookie("nombreUsuario", $_POST["email"],time()+60*60*24*30);
+    }
     header("location: perfil.php");
-    exit;
-
   }
+  // exit;
 }
-
 
 ?>
 
@@ -57,7 +59,10 @@ if(count($_POST)){
 
 
       <label for="inputUsername" class="sr-only">Email</label>
-      <input type="username" id="inputUsername" class="" placeholder="Email"   name ="email" value="<?php echo $email;?>" ><br>
+      <input type="text" id="inputUsername" class="" placeholder="Email"   name ="email" value="<?php if(isset($_COOKIE["nombreUsuario"])){
+        echo $_COOKIE["nombreUsuario"];
+      } else {
+        echo "";} ?>"> <br>
 
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="" placeholder="Contraseña" name="password"value="">
@@ -75,7 +80,7 @@ if(count($_POST)){
 
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me"> Recordarme
+          <input type="checkbox" name="remember-me" value="remember-me"> Recordarme
         </label>
       </div>
       <button class="btn btn-lg btn-primary" type="submit"name="ingresar">Ingresar</button><br><br>

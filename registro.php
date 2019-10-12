@@ -1,6 +1,6 @@
 <?php
   session_start();
-  // require("funciones.php");
+
   $rutaCss = "";
   $titulo = "Crea tu cuenta";
 

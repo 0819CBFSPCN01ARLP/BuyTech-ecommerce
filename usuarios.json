@@ -218,5 +218,12 @@
         "lastname": "vicky5",
         "email": "vicky5@vicky5.com",
         "password": "$2y$10$8.cJDrcEikoBa16w5FA8HOowrEw6pwj3Q7TW1OGbLVLtb9dnjkjQa"
+    },
+    {
+        "id": 32,
+        "name": "ter",
+        "lastname": "ter",
+        "email": "ter@ter.com",
+        "password": "$2y$10$f\/BMgGEF7EdkzstROYGUx.XRAQ4z.wf1uNXtXWftWR14nOIedFUVC"
     }
 ]

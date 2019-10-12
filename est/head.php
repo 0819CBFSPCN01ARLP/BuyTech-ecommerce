@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:500&display=swap" rel="stylesheet">
-  <!-- mi CSS -->
-  <!-- <link rel="stylesheet" href=<?=$rutaCss?>> -->
+  
+
   <title><?=$titulo?></title>
 </head>
