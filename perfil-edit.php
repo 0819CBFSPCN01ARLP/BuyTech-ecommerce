@@ -1,7 +1,9 @@
 <?php
 session_start();
-$rutaCss = "css/perfil.css";
+
 $titulo = "Mi perfil";
+
+
 ?>
 
 <!DOCTYPE html>

@@ -62,7 +62,7 @@ if(count($_POST)){
       <input type="text" id="inputUsername" class="" placeholder="Email"   name ="email" value="<?php if(isset($_COOKIE["nombreUsuario"])){
         echo $_COOKIE["nombreUsuario"];
       } else {
-        echo "";} ?>"> <br>
+        echo $email;} ?>"> <br>
 
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="" placeholder="Contraseña" name="password"value="">

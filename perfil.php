@@ -1,7 +1,19 @@
 <?php
 session_start();
-$rutaCss = "css/perfil.css";
+
 $titulo = "Mi perfil";
+//Si está iniciada la sesión, traer el array de usuario y comparar la data en Session con los mails
+if (isset($_SESSION["usuario"])) {
+  $jsonUsuarios = file_get_contents("usuarios.json");
+  $arrayDeUsuarios = json_decode($jsonUsuarios, true);
+  foreach ($arrayDeUsuarios as $usuario) {
+    if ($_SESSION["usuario"] == $usuario["email"]) {
+      $_SESSION["name"] = $usuario["name"];
+      $_SESSION["lastname"] = $usuario["lastname"];
+      // $_SESSION["imagen"] = $usuario["profile"];
+    }
+  }
+}
 
 ?>
 
@@ -26,9 +38,9 @@ $titulo = "Mi perfil";
             <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos personales</h5>
-              <p class="card-text">Nombre</p>
-              <p class="card-text">Apellido</p>
-              <p class="card-text">Email</p>
+              <p class="card-text">Nombre: <?= $_SESSION["name"]  ?></p>
+              <p class="card-text">Apellido: <?= $_SESSION["lastname"]?></p>
+              <p class="card-text">Email: <?=$_SESSION["usuario"]?></p>
               <p class="card-text">Celular</p>
               <p class="card-text">Fecha de nacimiento</p>
               <a href="perfil-edit.php">Editar</a>
@@ -37,7 +49,7 @@ $titulo = "Mi perfil";
             <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos de facturación</h5>
-              <p class="card-text">Nombre + Apellido</p>
+              <p class="card-text">Nombre + Apellido: <?= $_SESSION["name"] . " " . $_SESSION["lastname"]?></p>
               <p class="card-text">Dirección</p>
               <p class="card-text">Ciudad</p>
               <p class="card-text">País</p>
@@ -47,7 +59,7 @@ $titulo = "Mi perfil";
             <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos de envío</h5>
-              <p class="card-text">Nombre + Apellido</p>
+              <p class="card-text">Nombre + Apellido: <?= $_SESSION["name"] . " " . $_SESSION["lastname"]?></p>
               <p class="card-text">Dirección</p>
               <p class="card-text">Ciudad</p>
               <p class="card-text">País</p>
