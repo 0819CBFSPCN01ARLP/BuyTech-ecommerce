@@ -144,11 +144,11 @@ function passwordExiste(){
 
               foreach ($arrayDeUsuarios as $usuario) {
               if(password_verify($_POST["password"], $usuario["password"])){
-                        var_dump($_POST["password"], $usuario["password"]);
+                        // var_dump($_POST["password"], $usuario["password"]);
                 $respuesta = $passwordExistente;
                 break;
               }else{
-            $respuesta = $passwordNoExistente;
+                $respuesta = $passwordNoExistente;
               }
 
             }
