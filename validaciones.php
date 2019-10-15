@@ -84,9 +84,11 @@ function validarRegistro (){
              }else{
                $resultado = $imagenNoGuardada;
              }
-    }
-            return $resultado;
-      }
+            }
+            if ($resultado){
+              return $ruta;
+            }; //cambio return $resultado por un if, que si da true devuelve la ruta.
+          }
 //validar que el mail no exista para crear usuario
   function mailExiste(){
               $emailExistente= true;
@@ -118,8 +120,8 @@ function nuevoUsuario(){
                 "name" => $_POST["name"],
                 "lastname" => $_POST["lastname"],
                 "email" => $_POST["email"],
-                "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
-
+                "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
+                "avatar" => validarImagen()
               ];
 
               $usuariosArray[] = $usuarioNuevo;
@@ -127,8 +129,8 @@ function nuevoUsuario(){
               $usuariosFinal=json_encode($usuariosArray,JSON_PRETTY_PRINT);
               //envio el string a guardar
               file_put_contents("usuarios.json",$usuariosFinal);
-                $resultadoImagen = validarImagen();
-                echo $resultadoImagen;
+                // $resultadoImagen = validarImagen();
+                // echo $resultadoImagen;
               }
 
 //Validaciones en login

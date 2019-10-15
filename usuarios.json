@@ -225,5 +225,13 @@
         "lastname": "ter",
         "email": "ter@ter.com",
         "password": "$2y$10$f\/BMgGEF7EdkzstROYGUx.XRAQ4z.wf1uNXtXWftWR14nOIedFUVC"
+    },
+    {
+        "id": 33,
+        "name": "Santiago",
+        "lastname": "Larsen",
+        "email": "santiagolarsen93@gmail.com",
+        "password": "$2y$10$8h2YH2JkJRrBwyieLeZLI.ObBelpgFqnFY81Db8QHuhuJMjbvbW7S",
+        "avatar": "files\/usuario1.jpg"
     }
 ]

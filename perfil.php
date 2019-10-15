@@ -10,7 +10,7 @@ if (isset($_SESSION["usuario"])) {
     if ($_SESSION["usuario"] == $usuario["email"]) {
       $_SESSION["name"] = $usuario["name"];
       $_SESSION["lastname"] = $usuario["lastname"];
-      // $_SESSION["imagen"] = $usuario["profile"];
+      $_SESSION["avatar"] = $usuario["avatar"];
     }
   }
 }
@@ -27,7 +27,7 @@ if (isset($_SESSION["usuario"])) {
 
       <div class="row no-gutters container p-4">
         <div class="col-sm-0 pt-4 col-md-2">
-          <img src="img/profile.jpg" class="rounded-circle card-img " alt="...">
+          <img src="<?=$_SESSION["avatar"]?>" class="rounded-circle card-img " alt="...">
           <div class="p-2 text-center">
             <a href="perfil-edit.php" class="">Cambiar foto</a>
           </div>
