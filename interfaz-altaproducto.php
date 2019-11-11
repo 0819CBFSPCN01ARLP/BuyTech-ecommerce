@@ -1,6 +1,12 @@
 <?php
-require("pdo_admin/pdo.php");
 $titulo="Alta de productos";
+
+if(isset($_POST['modelo']) && isset($_POST['precio']) && isset($_POST['descripcion']) && isset($_POST['id_marca'])
+&& isset($_POST['id_procesador']) && isset($_POST['id_disco']) && isset($_POST['id_memoria'])){
+	require_once('pdo_admin/pdo.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +39,7 @@ $titulo="Alta de productos";
 
 		<div class="pt-1">
 			<label>Marca</label>
-			<select class="" name="marca">
+			<select class="" name="id_marca">
 				<option value="1">Asus</option>
 				<option value="2">HP</option>
 				<option value="3">Lenovo</option>
@@ -44,7 +50,7 @@ $titulo="Alta de productos";
 
 		<div>
 			<label>Procesador</label>
-			<select class="" name="procesador">
+			<select class="" name="id_procesador">
 				<option value="1">Intel Core i5</option>
 				<option value="2">Intel Core i7</option>
 				<option value="3">Intel Celeron</option>
@@ -54,7 +60,7 @@ $titulo="Alta de productos";
 
 		<div>
 			<label>Pantalla</label>
-			<select class="" name="pantalla">
+			<select class="" name="id_pantalla">
 				<option value="1">13"</option>
 				<option value="2">14"</option>
 			</select>
@@ -62,7 +68,7 @@ $titulo="Alta de productos";
 
 		<div>
 			<label>Tamaño de disco</label>
-			<select class="" name="disco">
+			<select class="" name="id_disco">
 				<option value="1">Asus</option>
 				<option value="2">HP</option>
 				<option value="3">Lenovo</option>
@@ -73,7 +79,7 @@ $titulo="Alta de productos";
 
 		<div>
 			<label>Memoria RAM</label>
-			<select class="" name="memoria">
+			<select class="" name="id_memoria">
 				<option value="1">4 GB</option>
 				<option value="2">8 GB</option>
 				<option value="3">16 GB</option>
@@ -82,7 +88,7 @@ $titulo="Alta de productos";
 
 		<div>
 			<label>Stock</label>
-			<input type="text" name="precio" value="">
+			<input type="text" name="stock" value="">
 		</div>
 
 		<div>
