@@ -69,11 +69,11 @@ if(isset($_POST['modelo']) && isset($_POST['precio']) && isset($_POST['descripci
 		<div>
 			<label>Tamaño de disco</label>
 			<select class="" name="id_disco">
-				<option value="1">Asus</option>
-				<option value="2">HP</option>
-				<option value="3">Lenovo</option>
-				<option value="4">EXO</option>
-				<option value="5">DELL</option>
+				<option value="1">128 GB</option>
+				<option value="2">1 TB</option>
+				<option value="3"></option>
+				<option value="4"></option>
+				<option value="5"></option>
 			</select>
 		</div>
 

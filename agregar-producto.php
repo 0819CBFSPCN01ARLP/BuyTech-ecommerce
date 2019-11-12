@@ -27,6 +27,7 @@ $query -> bindvalue(':id_memoria', $id_memoria);
 
 if ($query -> execute() ) {
   echo "Nuevo producto almacenado correctamente";
-} else {
-  echo "Ups, hubo un erro almacenando el producto :( )";
+}
+ else {
+  echo "Ups, hubo un error almacenando el producto :( ";
 }
