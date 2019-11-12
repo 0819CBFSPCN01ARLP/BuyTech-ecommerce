@@ -1,16 +1,23 @@
 <?php
 session_start();
-
+require_once("pdo_admin/pdo.php");
 $titulo = "Mi perfil";
 //Si está iniciada la sesión, traer el array de usuario y comparar la data en Session con los mails
 if (isset($_SESSION["usuario"])) {
-  $jsonUsuarios = file_get_contents("usuarios.json");
-  $arrayDeUsuarios = json_decode($jsonUsuarios, true);
+  $query = $db->prepare("SELECT * FROM usuarios");
+  $query->execute();
+  $arrayDeUsuarios = $query->fetchAll(PDO::FETCH_ASSOC);
   foreach ($arrayDeUsuarios as $usuario) {
-    if ($_SESSION["usuario"] == $usuario["email"]) {
-      $_SESSION["name"] = $usuario["name"];
-      $_SESSION["lastname"] = $usuario["lastname"];
-      $_SESSION["avatar"] = $usuario["avatar"];
+    if ($_SESSION["usuario"] == $usuario["mail"]) {
+      $_SESSION["name"] = $usuario["nombre"];
+      $_SESSION["lastname"] = $usuario["apellido"];
+      $_SESSION["avatar"] = $usuario["ruta_imagen"];
+      $_SESSION["celular"] = $usuario["celular"];
+      $_SESSION["direccion"] = $usuario["direccion"];
+      $_SESSION["ciudad"] = $usuario["ciudad"];
+      $_SESSION["codigoPostal"] = $usuario["codigo_postal"];
+      $_SESSION["pais"] = $usuario["pais"];
+
     }
   }
 }
@@ -41,22 +48,22 @@ if (isset($_SESSION["usuario"])) {
               <p class="card-text">Nombre: <?= $_SESSION["name"]  ?></p>
               <p class="card-text">Apellido: <?= $_SESSION["lastname"]?></p>
               <p class="card-text">Email: <?=$_SESSION["usuario"]?></p>
-              <p class="card-text">Celular</p>
-              <p class="card-text">Fecha de nacimiento</p>
+              <p class="card-text">Celular: <?=$_SESSION["celular"]?></p>
               <a href="perfil-edit.php">Editar</a>
             </div>
 
             <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
-              <h5 class="card-title">Datos de facturación</h5>
+              <h5 class="card-title">Datos de facturación y envío</h5>
               <p class="card-text">Nombre + Apellido: <?= $_SESSION["name"] . " " . $_SESSION["lastname"]?></p>
-              <p class="card-text">Dirección</p>
-              <p class="card-text">Ciudad</p>
-              <p class="card-text">País</p>
+              <p class="card-text">Dirección: <?=$_SESSION["direccion"]?></p>
+              <p class="card-text">Ciudad: <?=$_SESSION["ciudad"]?></p>
+              <p class="card-text">Código Postal: <?=$_SESSION["codigoPostal"]?></p>
+              <p class="card-text">País: <?=$_SESSION["pais"]?></p>
               <a href="perfil-edit.php">Editar</a>
             </div>
 
-            <div class="col-md-6 mt-2">
+            <!-- <div class="col-md-6 mt-2">
               <h6 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos de envío</h5>
               <p class="card-text">Nombre + Apellido: <?= $_SESSION["name"] . " " . $_SESSION["lastname"]?></p>
@@ -64,7 +71,7 @@ if (isset($_SESSION["usuario"])) {
               <p class="card-text">Ciudad</p>
               <p class="card-text">País</p>
               <a href="perfil-edit.php">Editar</a>
-            </div>
+            </div> -->
 
           </div>
         </div>

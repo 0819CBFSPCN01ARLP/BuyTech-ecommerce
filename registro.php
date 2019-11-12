@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  require_once("pdo_admin/pdo.php");
   $rutaCss = "";
   $titulo = "Crea tu cuenta";
 
@@ -18,24 +18,24 @@ if(!empty($_POST)){
 
   $name = trim($_POST ["name"]);
   $lastname = trim($_POST ["lastname"]);
-  $email = trim($_POST ["email"]);
+  $email = $_POST ["email"];
   $password  =trim($_POST ["password"]);
   $imagen = ($_FILES ["imagen"]);
 
-
+//borro trim del email para ver qué está haciendo que se guarde incorrectamente
 
 
 
 //guardar los errores que retorne la funcion validadadora;
 
-  $erroresRegistro = validarRegistro();
+  $erroresRegistro = validarRegistro($db);
   // $erroresImagen   = validarImagen();
 
 
 
 //Luego si no hay errores en el $errorRegistro, redireccion:
   if( !count($erroresRegistro)){
-  nuevoUsuario();
+  nuevoUsuario($db);
 
 // VER ACÁ EL PROBLEMA DE LA REDIRECCION A REGISTRO EXITOSO
   header("location:registroExitoso.php");

@@ -1,6 +1,8 @@
 <?php
+require_once("pdo_admin/pdo.php");
+
 //validacion errores en el registro
-function validarRegistro (){
+function validarRegistro ($db){
           $errores = [];
           $name = trim($_POST ["name"]);
           $lastname = trim($_POST ["lastname"]);
@@ -19,7 +21,7 @@ function validarRegistro (){
               $errores ["errorEmail"] = "El Email es Obligatorio";
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) ){
               $errores ["errorEmail"] = "Ingrese una direccion de correo valida";
-            }  else if ( mailExiste()){
+            }  else if ( mailExiste($db)){
               $errores ["mailExistente"]= "Usuario Ya Registrado";
             }
           //Validaciones de la contrasenia
@@ -65,99 +67,99 @@ function validarRegistro (){
   }
 
      //Si el archivo esta ok, se sube archivo
-           function validarImagen(){
-             $resultado = false;
-             if (isset($_POST ["profile"])){
-                   $name = $_FILES ["imagen"]["name"];
-                   $tmp_name = $_FILES ["imagen"]["tmp_name"];
-                   $errores = $_FILES ["imagen"]["error"];
-                   $size = $_FILES ["imagen"]["size"];
-                   $max_size = 1024 * 1024 * 1;
-                   $type = $_FILES ["imagen"]["type"];
-             $imagenGuardada = true;
-             $imagenNoGuardada =false;
-             $resultado = false;
-              $ruta = "files/". $name;
-             if(move_uploaded_file($tmp_name, $ruta)){
+function validarImagen(){
+  $resultado = false;
+  if (isset($_POST ["profile"])){
+         $name = $_FILES ["imagen"]["name"];
+         $tmp_name = $_FILES ["imagen"]["tmp_name"];
+         $errores = $_FILES ["imagen"]["error"];
+         $size = $_FILES ["imagen"]["size"];
+         $max_size = 1024 * 1024 * 1;
+         $type = $_FILES ["imagen"]["type"];
+    $imagenGuardada = true;
+    $imagenNoGuardada =false;
+    $resultado = false;
+    $ruta = "files/". $name;
+    if(move_uploaded_file($tmp_name, $ruta)){
 
-               $resultado=  $imagenGuardada;
-             }else{
-               $resultado = $imagenNoGuardada;
-             }
-            }
-            if ($resultado){
-              return $ruta;
-            }; //cambio return $resultado por un if, que si da true devuelve la ruta.
-          }
+     $resultado=  $imagenGuardada;
+    }else{
+     $resultado = $imagenNoGuardada;
+   }
+  }
+  if ($resultado){
+    return $ruta;
+  }; //cambio return $resultado por un if, que si da true devuelve la ruta.
+}
 //validar que el mail no exista para crear usuario
-  function mailExiste(){
-              $emailExistente= true;
-              $emailNoExistente = false;
-              $usuariosExistentes=file_get_contents("usuarios.json");
-              $arrayDeUsuarios=json_decode($usuariosExistentes,true);
+  function mailExiste($db){
+              // $emailExistente= true;
+              // $emailNoExistente = false;
+              $query = $db->prepare("SELECT * FROM usuarios");
+              $query->execute();
+              $arrayDeUsuarios = $query->fetchAll(PDO::FETCH_ASSOC);
               $respuesta = false;
                 foreach ($arrayDeUsuarios as $usuario) {
-                if($_POST["email"] == $usuario["email"]){
-              $respuesta = $emailExistente;
-              break;
-                }else{
-              $respuesta = $emailNoExistente;
-                }
+                  if($_POST["email"] == $usuario["mail"]){
+                    $respuesta = true;
+                    break;
+                      }else{
+                    $respuesta = false;
+                      }
 
-              }
+                  }
                 return $respuesta;
-  }
+              }
 //si no hay errores en registro y no existe el usuario, se crea nuevo usuarios
-function nuevoUsuario(){
-              $usuariosArray = [];
-              //guardo en variable lo que obtengo del json
-              $usuarios=file_get_contents("usuarios.json");
-              //decodifico el array de usuarios guardados
-              $usuariosArray=json_decode($usuarios,true);
-              //agrego al array de usuarios, el array del usuario nuevo
-              $usuarioNuevo = [
-                "id" => count($usuariosArray),
-                "name" => $_POST["name"],
-                "lastname" => $_POST["lastname"],
-                "email" => $_POST["email"],
-                "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
-                "avatar" => validarImagen()
-              ];
+function nuevoUsuario($db){
 
-              $usuariosArray[] = $usuarioNuevo;
-              //agrego al array de usuarios el nuevo y lo codifico en json
-              $usuariosFinal=json_encode($usuariosArray,JSON_PRETTY_PRINT);
-              //envio el string a guardar
-              file_put_contents("usuarios.json",$usuariosFinal);
-                // $resultadoImagen = validarImagen();
-                // echo $resultadoImagen;
+              // Paso los datos del formulario a variables
+
+              $nombre = $_POST["name"];
+              $apellido = $_POST["lastname"];
+              $mail = $_POST["email"];
+              $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+              $avatar = validarImagen();
+
+              // Preparo y ejecuto las consultas
+
+              $query = $db->prepare("INSERT INTO usuarios (nombre, apellido, mail, password, ruta_imagen) VALUES (:nombre, :apellido, :email, :password, :ruta_imagen)" );
+              $query->bindValue(':nombre',  $nombre);
+              $query->bindValue(':apellido',  $apellido);
+              $query->bindValue(':email',  $mail);
+              $query->bindValue(':password',  $password);
+              $query->bindValue(':ruta_imagen', $avatar);
+
+
+              $query->execute();
+
+
+
+
               }
 
 //Validaciones en login
 
-function passwordExiste(){
-//desencriptar contraseña
+function passwordExiste($db){
+//Traer datos de usuarios y verificar sus passwords frente a lo enviado por POST
 
-            $passwordExistente= true;
-            $passwordNoExistente = false;
-            $passwordExistentes=file_get_contents("usuarios.json");
-            $arrayDeUsuarios=json_decode($passwordExistentes,true);
+            $query = $db->prepare("SELECT * FROM usuarios");
+            $query->execute();
+            $arrayDeUsuarios = $query->fetchAll(PDO::FETCH_ASSOC);
             $respuesta = false;
-
-              foreach ($arrayDeUsuarios as $usuario) {
+            foreach ($arrayDeUsuarios as $usuario) {
               if(password_verify($_POST["password"], $usuario["password"])){
-                        // var_dump($_POST["password"], $usuario["password"]);
-                $respuesta = $passwordExistente;
+                $respuesta = true;
                 break;
               }else{
-                $respuesta = $passwordNoExistente;
+                $respuesta = false;
               }
 
             }
 
               return $respuesta;
 }
-function validarLogin(){
+function validarLogin($db){
 
               $errores = [];
 
@@ -169,26 +171,24 @@ function validarLogin(){
                 $errores ["errorEmail"] = "El Email es Obligatorio";
               } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $errores ["errorEmail"] = "Ingrese una direccion de correo valida";
-              } else if (!mailExiste()){
+              } else if (mailExiste($db) != true){
                 $errores ["mailNoExiste"]= "Usuario No Valido";
               }
 
-              //Validaciones de la contrasenia
+              //Validaciones de la contraseña
                 if(empty($password)){
                   $errores ["errorPassword"] = "Ingrese una Contraseña Valida";
                 }
 
-                else if (!passwordExiste()){
+                else if (!passwordExiste($db)){
                   $errores ["passwordNoExiste"]= "Contraseña No Valida";
                 }
 
-                else if (!passwordExiste()){
-                  $errores ["passwordNoExiste"]= "Contraseña No Valida";
-                }
+
               return $errores;
 
 }
-// Validar inicio de Session
+
 
 
  ?>

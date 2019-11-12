@@ -1,6 +1,6 @@
 <?php
   session_start();
-
+  require_once("pdo_admin/pdo.php");
   $rutaCss = "logincss.css";
 
   $titulo = "Ingresar";
@@ -19,7 +19,7 @@ if(count($_POST)){
 
 //array de errores
 
-  $erroresRegistro = validarLogin();
+  $erroresRegistro = validarLogin($db);
 
 //Si no hay error
   if (!count($erroresRegistro)){

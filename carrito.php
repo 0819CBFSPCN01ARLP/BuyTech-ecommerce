@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("pdo_admin/pdo.php");
   $rutaCss = "css/carrito.css";
   $titulo = "Carrito";
 ?>
