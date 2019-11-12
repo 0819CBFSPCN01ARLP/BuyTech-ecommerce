@@ -13,7 +13,7 @@ if (isset($_SESSION["usuario"])) {
       $_SESSION["lastname"] = $usuario["apellido"];
       $_SESSION["avatar"] = $usuario["ruta_imagen"];
       $_SESSION["celular"] = $usuario["celular"];
-      $_SESSION["direccion"] = $usuario["direccion"];
+      $_SESSION["direccion"] = $usuario["direccion_envio"];
       $_SESSION["ciudad"] = $usuario["ciudad"];
       $_SESSION["codigoPostal"] = $usuario["codigo_postal"];
       $_SESSION["pais"] = $usuario["pais"];
