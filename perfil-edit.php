@@ -19,7 +19,7 @@ if ($_POST) {
   $pais = $_POST["pais"];
   $codigoPostal = $_POST["codigoPostal"];
 
-  $query = $db->prepare("UPDATE 'usuarios' SET 'nombre' = :nombre, 'apellido' = :apellido, 'celular' = :celular, 'direccion_envio' = :direccion, 'ciudad' = :ciudad, 'pais' = :pais, 'codigo_postal' = :codigoPostal WHERE 'mail' = :email");
+  $query = $db->prepare("UPDATE usuarios SET nombre = :nombre, apellido = :apellido, celular = :celular, direccion_envio = :direccion, ciudad = :ciudad, pais = :pais, codigo_postal = :codigoPostal WHERE mail = :email");
   $query->bindValue(':nombre', $nombre);
   $query->bindValue(':apellido', $apellido);
   $query->bindValue(':celular', $celular);
@@ -30,7 +30,9 @@ if ($_POST) {
   $query->bindValue(':email', $email);
 
 
-  $query->execute();
+  if(!$query->execute()){
+    var_dump($query->errorInfo());
+  }
 
 }
 
