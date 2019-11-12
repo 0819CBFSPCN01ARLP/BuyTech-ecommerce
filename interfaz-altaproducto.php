@@ -40,7 +40,7 @@ if(isset($_POST['modelo']) && isset($_POST['precio']) && isset($_POST['descripci
 		<div class="pt-1">
 			<label>Marca</label>
 			<select class="" name="id_marca">
-				<option value="1">Asus</option>
+				<option value="1" >Asus</option>
 				<option value="2">HP</option>
 				<option value="3">Lenovo</option>
 				<option value="4">EXO</option>
