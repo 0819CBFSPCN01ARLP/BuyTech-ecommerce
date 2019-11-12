@@ -28,11 +28,9 @@ if ($_POST) {
   $query->bindValue(':pais', $pais);
   $query->bindValue(':codigoPostal', $codigoPostal);
   $query->bindValue(':email', $email);
+  $query->execute();
 
 
-  if(!$query->execute()){
-    var_dump($query->errorInfo());
-  }
 
 }
 
