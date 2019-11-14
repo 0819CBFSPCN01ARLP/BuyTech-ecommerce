@@ -20,7 +20,8 @@ if(isset($_POST['modelo']) && isset($_POST['precio']) && isset($_POST['descripci
 </head>
 
 <body class="ml-5 mt-5">
-	<form action="agregar-producto.php" method="POST">
+	<h3>Modificación de producto</h3>
+	<form action="modificar-producto.php" method="POST">
 
 		<div>
 			<label>Modelo</label>
@@ -96,7 +97,7 @@ if(isset($_POST['modelo']) && isset($_POST['precio']) && isset($_POST['descripci
 			<input type="text" name="" value="">
 		</div>
 
-		<button type="submit">Guardar Producto</button>
+		<button type="submit">Guardar Cambios</button>
 	</form>
 </body>
 
