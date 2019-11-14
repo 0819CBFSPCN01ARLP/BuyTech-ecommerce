@@ -17,6 +17,10 @@ if (isset($_SESSION["usuario"])) {
       $_SESSION["ciudad"] = $usuario["ciudad"];
       $_SESSION["codigoPostal"] = $usuario["codigo_postal"];
       $_SESSION["pais"] = $usuario["pais"];
+      if ($usuario["tipo_de_usuario"] == 1) {
+        $_SESSION["admin"] = $usuario["tipo_de_usuario"];
+        
+      }
 
     }
   }
@@ -43,7 +47,7 @@ if (isset($_SESSION["usuario"])) {
         <div class="col-md-10">
           <div class="card-body row">
             <div class="col-md-6 mt-2">
-              <h6 class="card-title dropdown-divider"></h5>
+              <h5 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos personales</h5>
               <p class="card-text">Nombre: <?= $_SESSION["name"]  ?></p>
               <p class="card-text">Apellido: <?= $_SESSION["lastname"]?></p>
@@ -53,7 +57,7 @@ if (isset($_SESSION["usuario"])) {
             </div>
 
             <div class="col-md-6 mt-2">
-              <h6 class="card-title dropdown-divider"></h5>
+              <h5 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos de facturación y envío</h5>
               <p class="card-text">Nombre + Apellido: <?= $_SESSION["name"] . " " . $_SESSION["lastname"]?></p>
               <p class="card-text">Dirección: <?=$_SESSION["direccion"]?></p>
