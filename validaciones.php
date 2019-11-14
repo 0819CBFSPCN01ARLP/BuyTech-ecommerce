@@ -46,30 +46,28 @@ function validarRegistro ($db){
              }
              //validacion de subida de archivo
 
-                    if (isset($_POST ["profile"])){
+              if (!empty(($_POST ["imagen"]))){
 
-                    $name = $_FILES ["imagen"]["name"];
-                    $tmp_name = $_FILES ["imagen"]["tmp_name"];
-                    $error = $_FILES ["imagen"]["error"];
-                    $size = $_FILES ["imagen"]["size"];
-                    $max_size = 1024 * 1024 * 1;
-                    $type = $_FILES ["imagen"]["type"];
-
-
-                          if( $size > $max_size){
-                            $errores ["errorTamaño"] = "El tamaño de la imagen supera el maximo permitido. 1 MB";
-                          }
-                          else if($type != "image/jpg" &&  $type !="image/png" &&  $type !="image/jpeg"){
-                             $errores ["errorTipo"]   = "Archivos permitidos JPG, PNG y JPEG";
-                        }
-                    }
+              $name = $_FILES ["imagen"]["name"];
+              $tmp_name = $_FILES ["imagen"]["tmp_name"];
+              $error = $_FILES ["imagen"]["error"];
+              $size = $_FILES ["imagen"]["size"];
+              $max_size = 1024 * 1024 * 1;
+              $type = $_FILES ["imagen"]["type"];
+              if( $size > $max_size){
+                $errores ["errorTamaño"] = "El tamaño de la imagen supera el maximo permitido. 1 MB";
+                }else if($type != "image/jpg" &&  $type !="image/png" &&  $type !="image/jpeg"){
+                $errores ["errorTipo"]   = "Archivos permitidos JPG, PNG y JPEG";
+                  }
+              }
           return $errores;
   }
 
      //Si el archivo esta ok, se sube archivo
 function validarImagen(){
   $resultado = false;
-  if (isset($_POST ["profile"])){
+  if (isset($_POST ["imagen"])){
+  // if ($_FILES){
          $name = $_FILES ["imagen"]["name"];
          $tmp_name = $_FILES ["imagen"]["tmp_name"];
          $errores = $_FILES ["imagen"]["error"];
@@ -121,18 +119,47 @@ function nuevoUsuario($db){
               $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
               $avatar = validarImagen();
 
-              // Preparo y ejecuto las consultas
+              //De forma barata seteo que sea admin cambiando el apellido y nombre a admin y luego ejecuto un IF que
+              // chequee y lo suba a la base de datos como admin.
+              if ($nombre == "admin" && $apellido == "admin") {
+                $admin = 1;
+                try {
+                  // Preparo y ejecuto las consultas
 
-              $query = $db->prepare("INSERT INTO usuarios (nombre, apellido, mail, password, ruta_imagen) VALUES (:nombre, :apellido, :email, :password, :ruta_imagen)" );
-              $query->bindValue(':nombre',  $nombre);
-              $query->bindValue(':apellido',  $apellido);
-              $query->bindValue(':email',  $mail);
-              $query->bindValue(':password',  $password);
-              $query->bindValue(':ruta_imagen', $avatar);
+                  $query = $db->prepare("INSERT INTO usuarios (tipo_de_usuario, nombre, apellido, mail, password, ruta_imagen) VALUES (:tipo_de_usuario, :nombre, :apellido, :email, :password, :ruta_imagen)" );
+                  $query->bindValue(':tipo_de_usuario', $admin);
+                  $query->bindValue(':nombre',  $nombre);
+                  $query->bindValue(':apellido',  $apellido);
+                  $query->bindValue(':email',  $mail);
+                  $query->bindValue(':password',  $password);
+                  $query->bindValue(':ruta_imagen', $avatar);
 
 
-              $query->execute();
+                  $query->execute();
 
+
+                } catch (\Exception $e) {
+                  echo "Hubo un error en la carga de usuario";
+                }
+
+              }else {
+                // Preparo y ejecuto las consultas
+                try {
+                  $query = $db->prepare("INSERT INTO usuarios (nombre, apellido, mail, password, ruta_imagen) VALUES (:nombre, :apellido, :email, :password, :ruta_imagen)" );
+                  $query->bindValue(':nombre',  $nombre);
+                  $query->bindValue(':apellido',  $apellido);
+                  $query->bindValue(':email',  $mail);
+                  $query->bindValue(':password',  $password);
+                  $query->bindValue(':ruta_imagen', $avatar);
+
+                  $query->execute();
+
+                } catch (\Exception $e) {
+                  echo "Hubo un error en la carga de usuario.";
+                }
+
+
+                }
 
 
 
