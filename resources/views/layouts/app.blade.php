@@ -7,10 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,6 +29,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,6 +38,18 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                      <form action=" " method="GET" role="search">
+                        {{ csrf_field() }}
+                        <div class="input-group">
+                        <input type="text" class="form-control" name="query" placeholder="¿Qué buscas?">
+                          <span class="input-group-btn pl-1">
+                            <button type="submit" class="btn btn-primary">
+                              <span class="glyphicon glyphicon-search"><ion-icon name="search"></ion-icon></span>
+                            </button>
+                          </span>
+                        </div>
+                      </form>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -41,11 +57,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ya tengo cuenta') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
                                 </li>
                             @endif
                         @else
@@ -72,9 +88,18 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
+
+    <footer class="footer mt-auto py-3 bg-info">
+      <div class="container text-center">
+        <span><a href="contacto.php" class="text-light ">CONTACTO -</a></span>
+        <span><a href="contacto.php" class="text-light">NOSOTROS -</a></span>
+        <span><a href="faq.php" class="text-light">PREGUNTAS FRECUENTES</a></span>
+      </div>
+    </footer>
+
 </body>
 </html>

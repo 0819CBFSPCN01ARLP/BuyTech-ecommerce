@@ -12,9 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/productos', function(){
+  return view('list');
+});
+
+Route::get('/producto/{id}', function(){
+  return view('show');
+});
+
+Route::get('/perfil', function(){
+  return view('profile');
+});
+
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

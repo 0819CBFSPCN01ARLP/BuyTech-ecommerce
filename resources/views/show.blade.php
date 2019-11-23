@@ -1,20 +1,7 @@
-<?php
-  session_start();
-  $rutaCss = "";
-  $titulo = "Detalle";
-?>
+@extends('layouts.app')
+@section('title','Producto:')
 
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<?php require("est/head.php") ?>
-<body>
-  <!-- acá va la barra de navegación -->
-<?php require("est/header.php") ?>
-
-  <!-- acá va la barra de filtro y ubicación (compus -> asus -> etc) -->
-
-  <!-- acá va el cuerpo de  la pagína, detalle del producto-->
+@section('content')
   <main class="container-fluid d-flex">
     <section class="col-sm-12 col-md-7 col-lg-7 mt-4">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -47,17 +34,17 @@
 
     <section class=" col-md-5 col-lg-5 mt-4">
       <div class="jumbotron">
-        <p>Lenovo</p>
-        <h1 class="">Notebook Lenovo 15, 6” Core I5 RAM 8G 1TB S145-81MV002A</h1>
+        <p>MARCA</p>
+        <h1 class="">MODELO</h1>
         <p class="lead">$$$</p>
         <hr class="my-4">
-        <p> Su procesador Intel core i5 junto con su memoria RAM de 8 GB, se complementan y ofrecen el máximo rendimiento con mejor consumo de energía. A su vez que permite ejecutar cualquier tarea con facilidad. También, guarda tu contenido multimedia y programas favoritos en el disco rígido de 1 TB.  </p>
+        <p> DESCRIPCION  </p>
+        <ul>
+          <li>ESPECIFICACIONES?</li>
+        </ul>
         <a class="btn btn-primary btn-lg" href="#" role="button">Comprar</a>
       </div>
     </section>
 
   </main>
-  <!-- acá va el footer -->
-<?php require("est/footer.php") ?>
-</body>
-</html>
+@endsection

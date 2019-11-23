@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
         PantallasTableSeeder::class,
         ProcesadoresTableSeeder::class,
     ]);
-      factory(User::class)->times(10)->create();
-      factory(Producto::class)->times(15)->create();
+      factory(App\User::class)->times(30)->create();
+      factory(App\Producto::class)->times(30)->create();
 
     }
 }

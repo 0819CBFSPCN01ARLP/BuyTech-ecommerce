@@ -5,7 +5,7 @@
 use App\Producto;
 use Faker\Generator as Faker;
 
-$factory->define(Producto::class, function (Faker $faker) {
+$factory->define(App\Producto::class, function (Faker $faker) {
     return [
       'modelo' => $faker->sentence(3),
       'precio' => $faker->numberBetween(20000, 80000),
