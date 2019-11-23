@@ -15,17 +15,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/productos', function(){
-  return view('list');
-});
-
-Route::get('/producto/{id}', function(){
-  return view('show');
-});
+Route::get('/productos', 'ProductoController@index');
 
 Route::get('/perfil', function(){
   return view('profile');
 });
+
+Route::get('/productos/{id}', 'ProductoController@show');
 
 
 

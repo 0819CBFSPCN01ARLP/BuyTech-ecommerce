@@ -5,8 +5,9 @@
   <main class="container-fluid d-flex" style="padding-left: 0px;padding-right: 0px;">
 
     {{-- SIDEBAR ---> Convertir en un formulario para filtrar productos --}}
-    <nav class="col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block container m-0">
-      <div class="">
+    <nav class=" col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block container m-0">
+      <div class="position-fixed">
+        <form class="" action="" method="post">
         <ul class="nav flex-column">
           <li class="nav-item">
             <br>Marca <br>
@@ -36,20 +37,29 @@
             <input type="checkbox" name="ram" value=""> Más de 8GB <br>
           </li>
         </ul>
+        <div class="pt-3">
+          <input class="btn " type="submit" name="" value="Aplicar filtro">
+          <input class="btn "type="button" name="" value="Limpiar">
+        </div>
+      </form>
       </div>
     </nav>
 
 {{-- Tarjeta de producto --}}
     <section class="col-md-10 row">
+      @foreach ($productos as $producto)
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
         <img src="https://images.fravega.com/s250/438f0f480558b68580f361267d598856.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Marca y modelo</h5>
-          <h6 class="price"> $$$ </h6>
+          <h5 class="card-title">{{$producto -> modelo}}</h5>
+          <h6 class="price"> $ {{$producto -> precio}} </h6>
           <p class="card-text">Especificaciones básicas del modelo</p>
-          <a href="detalle.php" class="btn btn-primary">Ver detalle</a>
+          <a href="/productos/{{$producto->id}}" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>
+    @endforeach
+    <div class="d-block float-right">
+      {{$productos->links()}}
+    </div>
     </section>
-  </nav>
 @endsection

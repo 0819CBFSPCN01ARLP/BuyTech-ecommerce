@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Producto:')
+@section('title','Detalle')
 
 @section('content')
   <main class="container-fluid d-flex">
@@ -34,11 +34,11 @@
 
     <section class=" col-md-5 col-lg-5 mt-4">
       <div class="jumbotron">
-        <p>MARCA</p>
-        <h1 class="">MODELO</h1>
-        <p class="lead">$$$</p>
+        <p>{{$producto -> marca}}</p>
+        <h1 class="">{{$producto -> modelo}}</h1>
+        <p class="lead">$ {{$producto -> precio}}</p>
         <hr class="my-4">
-        <p> DESCRIPCION  </p>
+        <p> {{$producto -> descripcion}}  </p>
         <ul>
           <li>ESPECIFICACIONES?</li>
         </ul>

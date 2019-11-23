@@ -14,8 +14,10 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+      $productos =  Producto::paginate(9);
+      return view('productos.list',compact('productos'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +46,10 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+      $producto = Producto::find($id);
+      return view('productos.show',compact('producto'));
     }
 
     /**
