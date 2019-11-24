@@ -51,9 +51,9 @@
       <div class="card col-sm-12 col-md-3 col-lg-3 m-3" >
         <img src="https://images.fravega.com/s250/438f0f480558b68580f361267d598856.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{$producto -> modelo}}</h5>
-          <h6 class="price"> $ {{$producto -> precio}} </h6>
-          <p class="card-text">Especificaciones básicas del modelo</p>
+          <h5 class="card-title">{{$producto->modelo}}</h5>
+          <h6 class="price"> $ {{$producto->precio}} </h6>
+          <p class="card-text">{{$producto->marca->descripcion}} {{$producto->procesador->descripcion}} {{$producto->memoria->descripcion}} {{$producto->disco->descripcion}} {{$producto->pantalla->descripcion}}</p>
           <a href="/productos/{{$producto->id}}" class="btn btn-primary">Ver detalle</a>
         </div>
       </div>

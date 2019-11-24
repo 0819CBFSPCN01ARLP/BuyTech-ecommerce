@@ -18,9 +18,9 @@
             <div class="col-md-6 mt-2">
               <h5 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos personales</h5>
-              <p class="card-text">Nombre: </p>
-              <p class="card-text">Apellido: </p>
-              <p class="card-text">Email: </p>
+              <p class="card-text">Nombre: {{$usuario->nombre}} </p>
+              <p class="card-text">Apellido: {{$usuario->apellido}} </p>
+              <p class="card-text">Email: {{$usuario->email}}</p>
               <p class="card-text">Celular: </p>
               <a href="perfil-edit.php">Editar</a>
             </div>
@@ -28,7 +28,6 @@
             <div class="col-md-6 mt-2">
               <h5 class="card-title dropdown-divider"></h5>
               <h5 class="card-title">Datos de facturación y envío</h5>
-              <p class="card-text">Nombre + Apellido: ]</p>
               <p class="card-text">Dirección:</p>
               <p class="card-text">Ciudad:</p>
               <p class="card-text">Código Postal: </p>

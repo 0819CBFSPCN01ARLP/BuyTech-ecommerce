@@ -34,7 +34,7 @@
 
     <section class=" col-md-5 col-lg-5 mt-4">
       <div class="jumbotron">
-        <p>{{$producto -> marca}}</p>
+        <p>{{$producto->marca->descripcion}} {{$producto->procesador->descripcion}} {{$producto->memoria->descripcion}} {{$producto->disco->descripcion}} {{$producto->pantalla->descripcion}} </p>
         <h1 class="">{{$producto -> modelo}}</h1>
         <p class="lead">$ {{$producto -> precio}}</p>
         <hr class="my-4">
