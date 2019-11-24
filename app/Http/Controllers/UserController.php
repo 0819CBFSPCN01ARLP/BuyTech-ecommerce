@@ -37,7 +37,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+      return view('editprofile', compact('user'));
     }
 
     /**
@@ -49,7 +49,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+      $user->fill([
+        "nombre" => $request->input('nombre'),
+        "apellido" => $request->input('apellido'),
+        "email" => $request->input('email'),
+        "direccion" => $request->input('direccion'),
+        "celular" => $request->input('celular'),
+        "codigo_postal" => $request->input('codigo_postal'),
+        "ciudad" => $request->input('ciudad'),
+        "provincia" => $request->input('provincia'),
+        "pais" => $request->input('pais')
+      ]);
+      $user->update();
+      return redirect("profile/$user->id");
     }
 
     /**

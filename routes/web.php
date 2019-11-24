@@ -25,8 +25,12 @@ Route::get('/productos/{id}', 'ProductoController@show');
 //RUTAS DE USUARIOS
 
 Auth::routes();
-//PROBLEMAS ACA, ME TIRA ERROR ROUTE PROFILE NOT DEFINED
-Route::get('/profile', 'UserController@rerouteToProfile');
+
 Route::get('/profile/{id}', 'UserController@show');
+Route::get('/profile/{id}/editprofile', 'UserController@edit');
+
+Route::patch('/profile/{id}/editprofile', 'UserController@update');
+
+
 
 // Route::get('/home', 'HomeController@index')->name('home');
