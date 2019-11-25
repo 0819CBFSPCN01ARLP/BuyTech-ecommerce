@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -18,11 +20,7 @@ class UserController extends Controller
     }
 
 
-    public function rerouteToProfile(User $user){
 
-      return redirect()->route('profile', [$user]);
-
-    }
     public function show($id)
     {
       $usuario = User::find($id);
@@ -35,9 +33,10 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-      return view('editprofile', compact('user'));
+      $usuario = User::find($id);
+      return view('editprofile', compact('usuario'));
     }
 
     /**
@@ -47,20 +46,20 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-      $user->fill([
-        "nombre" => $request->input('nombre'),
-        "apellido" => $request->input('apellido'),
-        "email" => $request->input('email'),
-        "direccion" => $request->input('direccion'),
-        "celular" => $request->input('celular'),
-        "codigo_postal" => $request->input('codigo_postal'),
-        "ciudad" => $request->input('ciudad'),
-        "provincia" => $request->input('provincia'),
-        "pais" => $request->input('pais')
-      ]);
-      $user->update();
+      $user = User::find($id);
+      $user->nombre = $request->input('nombre');
+      $user->apellido = $request->input('apellido');
+      $user->email = $request->input('email');
+      $user->direccion = $request->input('direccion');
+      $user->celular = $request->input('celular');
+      $user->codigo_postal = $request->input('codigo_postal');
+      $user->ciudad = $request->input('ciudad');
+      $user->provincia = $request->input('provincia');
+      $user->pais = $request->input('pais');
+
+      $user->save();
       return redirect("profile/$user->id");
     }
 
@@ -70,7 +69,7 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
         //
     }

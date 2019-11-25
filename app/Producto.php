@@ -9,6 +9,10 @@ class Producto extends Model
   public $table = "productos";
   public $guarded = [];
 
+  protected $fillable = [
+      'modelo', 'precio', 'stock', 'descripcion', 'marca', 'memoria', 'procesador', 'disco', 'pantalla'
+  ];
+
   public function marca(){
     return $this->belongsTo("App\Marca", "id_marca");
   }
