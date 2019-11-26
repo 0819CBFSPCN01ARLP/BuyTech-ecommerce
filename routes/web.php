@@ -19,11 +19,11 @@ Route::get('/', function () {
 Route::get('/productos', 'ProductoController@index');
 
 
-Route::get('/productos/{id}', 'ProductoController@show');
-Route::get('/productos/{id}/edit', 'ProductoController@edit');
-
 Route::get('/productos/add', 'ProductoController@create');
 Route::post('/productos/add', 'ProductoController@store');
+
+Route::get('/productos/{id}', 'ProductoController@show');
+Route::get('/productos/{id}/edit', 'ProductoController@edit');
 
 Route::patch('/productos/{id}/edit', 'ProductoController@update');
 
