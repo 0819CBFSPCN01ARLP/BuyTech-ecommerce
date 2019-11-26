@@ -20,6 +20,12 @@ Route::get('/productos', 'ProductoController@index');
 
 
 Route::get('/productos/{id}', 'ProductoController@show');
+Route::get('/productos/{id}/edit', 'ProductoController@edit');
+
+Route::get('/productos/nuevo', 'ProductoController@add');
+Route::post('/productos/nuevo', 'ProductoController@store');
+
+Route::patch('/productos/{id}/edit', 'ProductoController@update');
 
 
 //RUTAS DE USUARIOS

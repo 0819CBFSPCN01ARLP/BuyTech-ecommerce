@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use SoftDelete;
 class Producto extends Model
 {
   public $table = "productos";

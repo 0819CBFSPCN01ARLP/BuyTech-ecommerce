@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Producto;
 use Illuminate\Http\Request;
+use App\Marca;
+use App\Memoria;
+use App\Disco;
+use App\Pantalla;
+use App\Procesador;
 
 class ProductoController extends Controller
 {
@@ -24,10 +29,19 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+     /*AÑADIR PRODUCTOS */
+     public function add()
+     {
+
+       $marcas = Marca::all();
+       $memorias = Memoria::all();
+       $procesadores = Procesador::all();
+       $discos = Disco::all();
+       $pantallas = Pantalla::all();
+       $vac = compact("marcas", "memorias", "procesadores", "discos", "pantallas");
+       return view('productos.add', $vac);
+     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,9 +49,30 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-      
+      $producto = new Producto();
+
+      $ruta = $request->file("imagen")->store("public");
+      $nombreArchivo = basename($ruta);
+
+      $producto->modelo = $request["modelo"];
+      $producto->precio = $request["precio"];
+      $producto->stock = $request["stock"];
+      $producto->descripcion = $request["descripcion"];
+      $producto->id_marca = $request["marca"];
+      $producto->id_memoria = $request["memoria"];
+      $producto->id_pantalla = $request["pantalla"];
+      $producto->id_disco = $request["disco"];
+      $producto->id_procesador = $request["procesador"];
+
+      // Hay que cambiar la base de datos para agregar la carga de la ruta de la imagen del producto.
+      // $producto-> = $nombreArchivo;
+      $producto->save();
+
+      return redirect("/productos/$producto->id");
+
     }
 
     /**
@@ -58,9 +93,16 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+      $producto = Producto::find($id);
+      $marcas = Marca::all();
+      $memorias = Memoria::all();
+      $procesadores = Procesador::all();
+      $discos = Disco::all();
+      $pantallas = Pantalla::all();
+      $vac = compact("producto", "marcas", "memorias", "procesadores", "discos", "pantallas");
+      return view('productos.edit', $vac);
     }
 
     /**
@@ -70,10 +112,32 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+      $producto = Producto::find($id);
+
+      $ruta = $request->file("imagen")->store("public");
+      $nombreArchivo = basename($ruta);
+
+      $producto->modelo = $request["modelo"];
+      $producto->precio = $request["precio"];
+      $producto->stock = $request["stock"];
+      $producto->descripcion = $request["descripcion"];
+      $producto->id_marca = $request["marca"];
+      $producto->id_memoria = $request["memoria"];
+      $producto->id_pantalla = $request["pantalla"];
+      $producto->id_disco = $request["disco"];
+      $producto->id_procesador = $request["procesador"];
+
+      // Hay que cambiar la base de datos para agregar la carga de la ruta de la imagen del producto.
+      // $producto-> = $nombreArchivo;
+      $producto->save();
+
+      return redirect("productos/$producto->id");
+
     }
+
+
 
     /**
      * Remove the specified resource from storage.

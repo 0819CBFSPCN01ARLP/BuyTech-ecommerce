@@ -79,8 +79,8 @@
                                     <a class="dropdown-item" href="{{ url('') }}">
                                       Compras
                                     </a>
-                                    <a class="dropdown-item" href="{{ url('') }}">
-                                      Seguridad
+                                    <a class="dropdown-item" href="/productos/nuevo">
+                                      Añadir producto
                                     </a>
                                     <div class="dropdown-divider"></div>
                                     {{-- BOTÓN PARA CERRAR SESIÓN --}}
