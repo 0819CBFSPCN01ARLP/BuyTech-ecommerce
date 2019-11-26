@@ -18,7 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('modelo');
             $table->bigInteger('precio');
             $table->bigInteger('stock');
-            // $table->string('imagen');
+            $table->string('imagen')->nullable();
             $table->string('descripcion', 500);
 
             $table->timestamps();
@@ -35,6 +35,8 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('productos');
+        Schema::enableForeignKeyConstraints();
     }
 }

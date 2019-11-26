@@ -10,7 +10,7 @@ class Producto extends Model
   public $guarded = [];
 
   protected $fillable = [
-      'modelo', 'precio', 'stock', 'descripcion', 'marca', 'memoria', 'procesador', 'disco', 'pantalla'
+      'modelo', 'precio', 'stock', 'descripcion', 'marca', 'memoria', 'procesador', 'disco', 'pantalla', 'imagen'
   ];
 
   public function marca(){

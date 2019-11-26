@@ -33,6 +33,8 @@ class CreateMemoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memorias');
+      Schema::disableForeignKeyConstraints();
+      Schema::dropIfExists('memorias');
+      Schema::enableForeignKeyConstraints();
     }
 }

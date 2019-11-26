@@ -32,6 +32,8 @@ class CreateDiscosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('discos');
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -30,7 +30,7 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
      /*AÑADIR PRODUCTOS */
-     public function add()
+     public function create()
      {
 
        $marcas = Marca::all();
@@ -66,9 +66,9 @@ class ProductoController extends Controller
       $producto->id_pantalla = $request["pantalla"];
       $producto->id_disco = $request["disco"];
       $producto->id_procesador = $request["procesador"];
+      $producto->imagen = $nombreArchivo;
 
-      // Hay que cambiar la base de datos para agregar la carga de la ruta de la imagen del producto.
-      // $producto-> = $nombreArchivo;
+
       $producto->save();
 
       return redirect("/productos/$producto->id");
@@ -128,9 +128,8 @@ class ProductoController extends Controller
       $producto->id_pantalla = $request["pantalla"];
       $producto->id_disco = $request["disco"];
       $producto->id_procesador = $request["procesador"];
+      $producto->imagen = $nombreArchivo;
 
-      // Hay que cambiar la base de datos para agregar la carga de la ruta de la imagen del producto.
-      // $producto-> = $nombreArchivo;
       $producto->save();
 
       return redirect("productos/$producto->id");
@@ -145,8 +144,10 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+      $producto = Producto::find($id);
+      $producto->delete();
+      return redirect('/productos');
     }
 }
