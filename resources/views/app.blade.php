@@ -18,7 +18,7 @@
   <title>@yield('title')</title>
 </head>
 
-<header class="navbar navbar-expand-sm navbar-dark bg-light">
+<header class="navbar navbar-expand-sm navbar-dark bg-light ">
   <div class="">
     <a class="navbar-brand" href="index.php"><img src="img/logo-lg.png" class="img-fluid w-25" alt=""></a>
   </div>

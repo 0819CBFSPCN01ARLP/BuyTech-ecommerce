@@ -43,6 +43,7 @@
           <li>ESPECIFICACIONES?</li>
         </ul>
         <a class="btn btn-primary btn-lg" href="#" role="button">Comprar</a>
+        @if (Auth::user())
         @if (Auth::user()->isAdmin() == 1)
 
           <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
@@ -54,6 +55,7 @@
           <button type="submit" name="button">ELIMINAR</button>
         </form>
         @endif
+      @endif
     </section>
 
   </main>
