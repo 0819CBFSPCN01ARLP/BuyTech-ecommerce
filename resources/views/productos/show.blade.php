@@ -44,7 +44,10 @@
         </ul>
         <a class="btn btn-primary btn-lg" href="#" role="button">Comprar</a>
         @if (Auth::user())
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0410fb94e745c504815af4c5a70f9a15e4b3d957
         @if (Auth::user()->isAdmin() == 1)
 
             <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
@@ -56,7 +59,11 @@
             </form>
           @endif
         @endif
+<<<<<<< HEAD
       </div>
+=======
+      @endif
+>>>>>>> 0410fb94e745c504815af4c5a70f9a15e4b3d957
     </section>
 
   </main>

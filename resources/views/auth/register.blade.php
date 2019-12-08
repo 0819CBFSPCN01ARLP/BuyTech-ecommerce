@@ -1,14 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container p-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+<<<<<<< HEAD
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" name="registro">
+=======
+                <div class="card-body p-5">
+                    <form method="POST" action="{{ route('register') }}">
+>>>>>>> 0410fb94e745c504815af4c5a70f9a15e4b3d957
                         @csrf
 
                         {{-- 1. Bloque copiado del name para agregar campo nuevo OK--}}
