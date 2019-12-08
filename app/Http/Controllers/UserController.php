@@ -49,6 +49,20 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
       $user = User::find($id);
+      $reglas = [
+        "nombre" => "required|max:40",
+        "apellido" => "required|max:40",
+        "email" => "required|max:100",
+        "direccion" => "required|max:100",
+        "celular" => "required|max:40",
+        "codigo_postal" => "required|numeric|max:20",
+        "ciudad" => "required|max:40",
+        "provincia" => "required|max:40",
+        "pais" => "required|max:40",
+
+      ]
+      $this->validate($request, $reglas);
+
       $user->nombre = $request->input('nombre');
       $user->apellido = $request->input('apellido');
       $user->email = $request->input('email');

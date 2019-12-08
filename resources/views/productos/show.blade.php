@@ -43,17 +43,20 @@
           <li>ESPECIFICACIONES?</li>
         </ul>
         <a class="btn btn-primary btn-lg" href="#" role="button">Comprar</a>
+        @if (Auth::user())
+
         @if (Auth::user()->isAdmin() == 1)
 
-          <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
-        </div>
-        <form class="" action="" method="post" >
-          @method("DELETE")
-          @csrf
-          <input type="hidden" value="{{$producto->id}}">
-          <button type="submit" name="button">ELIMINAR</button>
-        </form>
+            <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
+            <form class="pt-3" action="" method="post" >
+              @method("DELETE")
+              @csrf
+              <input type="hidden" value="{{$producto->id}}">
+              <button type="submit" class="btn btn-primary btn-lg pt-3" name="button">ELIMINAR</button>
+            </form>
+          @endif
         @endif
+      </div>
     </section>
 
   </main>

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" name="registro">
                         @csrf
 
                         {{-- 1. Bloque copiado del name para agregar campo nuevo OK--}}

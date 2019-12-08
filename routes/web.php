@@ -14,6 +14,15 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/faq', function(){
+  return view('faq');
+});
+
+Route::get('/contacto', function(){
+  return view('contacto');
+});
+
 // RUTAS DE PRODUCTOS
 
 Route::get('/productos', 'ProductoController@index');

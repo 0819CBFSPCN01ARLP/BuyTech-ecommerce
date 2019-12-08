@@ -57,6 +57,13 @@ class ProductoController extends Controller
       $ruta = $request->file("imagen")->store("public");
       $nombreArchivo = basename($ruta);
 
+      $reglas = [
+        "modelo" => "required|max:250",
+        "precio" => "required|numeric",
+        "descripcion" => "max:300",
+        "stock" => "required|numeric"
+      ];
+      $this->validate($request, $reglas);
       $producto->modelo = $request["modelo"];
       $producto->precio = $request["precio"];
       $producto->stock = $request["stock"];
@@ -119,6 +126,13 @@ class ProductoController extends Controller
       $ruta = $request->file("imagen")->store("public");
       $nombreArchivo = basename($ruta);
 
+      $reglas = [
+        "modelo" => "required|max:250",
+        "precio" => "required|numeric",
+        "descripcion" => "max:300",
+        "stock" => "required|numeric"
+      ];
+      $this->validate($request, $reglas);
       $producto->modelo = $request["modelo"];
       $producto->precio = $request["precio"];
       $producto->stock = $request["stock"];
