@@ -19,11 +19,21 @@ class ProductoController extends Controller
      */
     public function index()
     {
+      $marcas = Marca::all();
+      $memorias = Memoria::all();
+      $procesadores = Procesador::all();
+      $discos = Disco::all();
+      $pantallas = Pantalla::all();
       $productos =  Producto::paginate(9);
-      return view('productos.list',compact('productos'));
+
+      $vac = compact("marcas", "memorias", "procesadores", "discos", "pantallas", "productos");
+
+      return view('productos.list', $vac);
     }
 
+    public function search(){
 
+    }
     /**
      * Show the form for creating a new resource.
      *
