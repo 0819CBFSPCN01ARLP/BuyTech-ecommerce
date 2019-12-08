@@ -52,11 +52,11 @@
               @method("DELETE")
               @csrf
               <input type="hidden" value="{{$producto->id}}">
-              <button type="submit" class="btn btn-primary btn-lg pt-3" name="button">ELIMINAR</button>
+              <button type="submit" class="btn btn-danger btn-lg " name="button">Eliminar</button>
             </form>
           @endif
         @endif
-      
+
     </section>
 
   </main>
