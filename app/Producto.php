@@ -28,4 +28,7 @@ class Producto extends Model
   public function pantalla(){
     return $this->belongsTo("App\Pantalla", "id_pantalla");
   }
+  public function imagen(){
+    return $this->hasMany("App\Imagenes", "id_imagen");
+  }
 }

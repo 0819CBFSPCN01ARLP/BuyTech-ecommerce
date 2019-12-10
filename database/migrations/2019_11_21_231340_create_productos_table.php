@@ -18,7 +18,6 @@ class CreateProductosTable extends Migration
             $table->string('modelo');
             $table->bigInteger('precio');
             $table->bigInteger('stock');
-            $table->string('imagen')->nullable();
             $table->string('descripcion', 500);
 
             $table->timestamps();
