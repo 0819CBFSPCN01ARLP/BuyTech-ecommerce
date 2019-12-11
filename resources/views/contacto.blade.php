@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title' , 'Contacto')
-
+@section('content')
 <section class="container mt-5 mb-5">
   <div class="card">
     <h5 class="card-header">Contacto</h5>

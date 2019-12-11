@@ -60,7 +60,7 @@ class UserController extends Controller
         "provincia" => "required|max:40",
         "pais" => "required|max:40",
 
-      ]
+      ];
       $this->validate($request, $reglas);
 
       $user->nombre = $request->input('nombre');

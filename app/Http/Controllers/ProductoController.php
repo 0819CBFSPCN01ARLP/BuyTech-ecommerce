@@ -104,6 +104,12 @@ class ProductoController extends Controller
       return view('productos.show',compact('producto'));
     }
 
+    public function showCompra($id)
+    {
+      $producto = Producto::find($id);
+      return view('carrito',compact('producto'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

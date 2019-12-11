@@ -42,22 +42,29 @@
         <ul>
           <li>ESPECIFICACIONES?</li>
         </ul>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Comprar</a>
+        @auth
+          <a class="btn btn-primary btn-lg" href="/carrito/{{$producto->id}}" role="button">Comprar</a>
+        @else
+          <a id="compraGuest" class="btn btn-primary btn-lg" href="" role="button"> Comprar</a>
+        @endauth
+
+
+
         @if (Auth::user())
 
-        @if (Auth::user()->isAdmin() == 1)
+          @if (Auth::user()->isAdmin() == 1)
 
             <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
             <form class="pt-3" action="" method="post" >
               @method("DELETE")
               @csrf
               <input type="hidden" value="{{$producto->id}}">
-              <button type="submit" class="btn btn-danger btn-lg " name="button">Eliminar</button>
+              <button type="submit" class="btn btn-danger btn-lg" name="button" onclick="confirm('Querés eliminar este producto?')">Eliminar</button>
             </form>
           @endif
         @endif
 
-    </section>
+      </section>
 
-  </main>
-@endsection
+    </main>
+  @endsection

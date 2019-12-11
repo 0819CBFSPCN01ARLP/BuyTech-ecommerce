@@ -14,41 +14,28 @@
             @foreach ($marcas as $marca)
               <input type="checkbox" name="{{$marca->descripcion}}" value="{{$marca->id}}"> {{$marca->descripcion}} <br>
             @endforeach
-{{--
-            <input type="checkbox" name="marca" value=""> Lenovo <br>
-            <input type="checkbox" name="marca" value=""> HP <br>
-            <input type="checkbox" name="marca" value=""> Asus <br>
-            <input type="checkbox" name="marca" value=""> Acer <br> <br> --}}
+
           </li>
           <li class="nav-item">
             Procesador <br>
             @foreach ($procesadores as $procesador)
               <input type="checkbox" name="{{$procesador->descripcion}}" value="{{$procesador->id}}"> {{$procesador->descripcion}}<br>
             @endforeach
-            {{--
-            <input type="checkbox" name="Procesador" value=""> Core i5 <br>
-            <input type="checkbox" name="Procesador" value=""> Core i7 <br>
-            <input type="checkbox" name="Procesador" value=""> AMD <br>
-            <input type="checkbox" name="Procesador" value=""> Intel Celeron <br><br> --}}
+
           </li>
           <li class="nav-item">
             Tamaño de pantalla <br>
             @foreach ($pantallas as $pantalla)
               <input type="checkbox" name="{{$pantalla->descripcion}}" value="{{$pantalla->id}}"> {{$pantalla->descripcion}} <br>
             @endforeach
-            {{-- <input type="checkbox" name="pantalla" value=""> 15.6 pulgadas <br>
-            <input type="checkbox" name="pantalla" value=""> 14 pulgadas <br>
-            <input type="checkbox" name="pantalla" value=""> 13.3 pulgadas <br>
-            <input type="checkbox" name="pantalla" value=""> 14.1 pulgadas <br><br> --}}
+
           </li>
           <li class="nav-item">
             Memoria RAM <br>
             @foreach ($memorias as $memoria)
               <input type="checkbox" name="{{$memoria->descripcion}}" value="{{$memoria->id}}">{{$memoria->descripcion}} <br>
             @endforeach
-            {{-- <input type="checkbox" name="ram" value=""> De 4GB a 8GB <br>
-            <input type="checkbox" name="ram" value=""> Menos de 4GB <br>
-            <input type="checkbox" name="ram" value=""> Más de 8GB <br> --}}
+
           </li>
           <li class="nav-item">
             Disco <br>
@@ -56,10 +43,6 @@
               <input type="checkbox" name="{{$disco->descripcion}}" value="{{$disco->id}}">  {{$disco->descripcion}}<br>
             @endforeach
 
-            {{-- <input type="checkbox" name="disco" value="">4 TB <br>
-            <input type="checkbox" name="disco" value="">2 TB <br>
-            <input type="checkbox" name="disco" value="">1 TB <br>
-            <input type="checkbox" name="disco" value="">500 GB <br> --}}
           </li>
         </ul>
         <div class="pt-3">
