@@ -74,6 +74,7 @@ class ProductoController extends Controller
       }
     }
 
+<<<<<<< HEAD
     if (count($arrayProcesadores)){
       $query = $query->whereIn("id_procesador", $arrayProcesadores);
     }
@@ -82,6 +83,30 @@ class ProductoController extends Controller
         array_push($arrayDiscos, $disco->id);
         // $arrayDiscos[]+=$disco->id;
       }
+=======
+    public function showCompra($id)
+    {
+      $producto = Producto::find($id);
+      return view('carrito',compact('producto'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Producto  $producto
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+      $producto = Producto::find($id);
+      $marcas = Marca::all();
+      $memorias = Memoria::all();
+      $procesadores = Procesador::all();
+      $discos = Disco::all();
+      $pantallas = Pantalla::all();
+      $vac = compact("producto", "marcas", "memorias", "procesadores", "discos", "pantallas");
+      return view('productos.edit', $vac);
+>>>>>>> d57395dbe01b538ad76f14bcdfd3560681dcd6f0
     }
 
     if (count($arrayDiscos)){

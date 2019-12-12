@@ -45,7 +45,10 @@
               <input type="checkbox" name="{{$disco->descripcion}}" value="{{$disco->id}}">  {{$disco->descripcion}}<br>
             @endforeach
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d57395dbe01b538ad76f14bcdfd3560681dcd6f0
           </li>
         </ul>
         <div class="pt-3">

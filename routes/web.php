@@ -23,6 +23,8 @@ Route::get('/contacto', function(){
   return view('contacto');
 });
 
+Route::get('/carrito/{id}','ProductoController@showCompra');
+
 // RUTAS DE PRODUCTOS
 
 Route::get('/productos', 'ProductoController@index');
