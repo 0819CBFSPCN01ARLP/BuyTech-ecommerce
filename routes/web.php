@@ -26,6 +26,7 @@ Route::get('/contacto', function(){
 // RUTAS DE PRODUCTOS
 
 Route::get('/productos', 'ProductoController@index');
+Route::get('/productos/filtered', 'ProductoController@search');
 
 Route::get('/productos/add', 'ProductoController@create');
 Route::post('/productos/add', 'ProductoController@store');
@@ -37,7 +38,6 @@ Route::patch('/productos/{id}/edit', 'ProductoController@update');
 
 Route::delete('/productos/{id}', 'ProductoController@destroy');
 
-Route::post('productos', 'ProductoController@search');
 //RUTAS DE USUARIOS
 
 Auth::routes();
