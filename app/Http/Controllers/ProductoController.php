@@ -74,7 +74,7 @@ class ProductoController extends Controller
       }
     }
 
-<<<<<<< HEAD
+
     if (count($arrayProcesadores)){
       $query = $query->whereIn("id_procesador", $arrayProcesadores);
     }
