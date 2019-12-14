@@ -42,56 +42,86 @@
 
   <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    {{-- <div class="row">
-    <div class="col-lg-4">
-    <img src="/img/phone.jpg" alt="" class="rounded w-50">
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    <p><a class="btn btn-secondary" href="{{ url('productos') }}" role="button">Ver celulares</a></p>
-  </div><!-- /.col-lg-4 -->
-
-  <div class="col-lg-4">
-  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  <h2></h2>
-  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-  <p><a class="btn btn-secondary" href="{{ url('productos') }}" role="button">Ver notebooks</a></p>
-</div><!-- /.col-lg-4 -->
-
-<div class="col-lg-4">
-<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-<h2></h2>
-<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-<p><a class="btn btn-secondary" href="{{ url('productos') }}" role="button">Ver tablets</a></p>
-</div><!-- /.col-lg-4 -->
-</div><!-- /.row --> --}}
-
-<!-- START THE FEATURETTES -->
-
-<hr class="featurette-divider">
-
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading"> Nuevos ingresos <span class="text-muted">que no te podes perder</span></h2>
-    <p class="lead"> Texto texto </p>
-  </div>
-
-  <div id="carouselExampleControls" class="carousel slide col-md-5" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/img/phone.jpg" class="d-block w-100" alt="...">
+ {{-- Barra con acceso a productos en version movile --}}
+    <div class="d-block d-sm-none pt-3">
+      <a href="/productos">
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row no-gutters">
+          <div class="col-md-12">
+            <img src="/img/computer.svg" class="card-img p-3" alt="Productos" style="max-width:">
+          </div>
+          <div class="">
+            <div class="card-body d-block card-img-overlay">
+              <h5 class="card-title">Ver notebooks</h5>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="/img/phone.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="/img/phone.jpg" class="d-block w-100" alt="...">
-      </div>
+      </a>
     </div>
-    {{-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+
+    <div class="d-block d-sm-none pt-3">
+      <a href="/productos">
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row no-gutters">
+          <div class="col-md-12">
+            <img src="/img/phone.svg" class="card-img p-3" alt="Productos" style="max-width:">
+          </div>
+          <div class="">
+            <div class="card-body d-block card-img-overlay">
+              <h5 class="card-title">Ver celulares</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <div class="d-block d-sm-none pt-3">
+      <a href="/productos">
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row no-gutters">
+          <div class="col-md-12">
+            <img src="/img/tablet.svg" class="card-img p-3" alt="Productos" style="max-width:">
+          </div>
+          <div class="">
+            <div class="card-body d-block card-img-overlay">
+              <h5 class="card-title">Ver tablets</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"> Nuevos ingresos <span class="text-muted">que no te podes perder</span></h2>
+        <p class="lead"> Texto texto </p>
+      </div>
+
+      <div id="carouselExampleControls" class="carousel slide col-md-5" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/phone.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/phone.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/phone.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        {{-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only"></span>
     </a> --}}

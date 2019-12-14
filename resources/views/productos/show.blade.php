@@ -2,8 +2,9 @@
 @section('title','Detalle')
 
 @section('content')
-  <main class="container-fluid d-flex pb-5">
-    <section class="col-sm-12 col-md-7 col-lg-7 mt-4">
+  <main class="container d-flex pb-5">
+
+    <section class="col-sm-12 col-md-7 mt-4">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -32,7 +33,7 @@
       </div>
     </section>
 
-    <section class="col-md-5 col-lg-5 mt-4">
+    <section class="col-sm-12 col-md-5 col-lg-5 mt-4">
       <div class="jumbotron">
         <p>{{$producto->marca->descripcion}}</p>
         <h1 class="">{{$producto->modelo}}</h1>
@@ -47,14 +48,15 @@
             <form class="border-top" action="" method="post">
               <div class="pt-3 pb-2">
                 Cantidad:
-                <select class="" name="">
+                <select id="masSeis" class="" name="" >
                   <option value="1">1 unidad</option>
                   <option value="2">2 unidades</option>
                   <option value="3">3 unidades</option>
                   <option value="4">4 unidades</option>
                   <option value="5">5 unidades</option>
-                  <option value=" ">+ de 6 unidades</option>
+                  <option value="6">+ de 6 unidades</option>
                 </select>
+                <input id="textomasseis" type="number" name="" value="" min="6" class="d-none">
               </div>
               <div class="pt-2">
               <a class="btn btn-primary" href="/carrito/{{$producto->id}}" role="button">Comprar</a>

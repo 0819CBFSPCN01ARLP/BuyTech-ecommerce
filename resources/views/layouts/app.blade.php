@@ -42,7 +42,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+{{-- aaa --}}
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
@@ -66,11 +66,11 @@
             <!-- Authentication Links -->
             @guest
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Ya tengo cuenta') }}</a>
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresá') }}</a>
               </li>
               @if (Route::has('register'))
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
+                  <a class="nav-link" href="{{ route('register') }}">{{ __('Creá tu cuenta') }}</a>
                 </li>
               @endif
             @else
@@ -114,16 +114,6 @@
   </nav>
 </div>
 
-{{-- <div class="">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data</li>
-    </ol>
-  </nav>
-</div> --}}
-
 <main class="">
   @yield('content')
 </main>
@@ -131,7 +121,7 @@
 
 <footer class="footer mt-auto p-3 bg-info">
   <div class="container text-center">
-    <span><a href="/contacto" class="text-white">CONTACTO </a></span> -
+    <span><a href="/contacto" class="text-white">CONTACTO       </a></span> 
     <span><a href="/faq" class="text-white">PREGUNTAS FRECUENTES</a></span>
   </div>
 </footer>
