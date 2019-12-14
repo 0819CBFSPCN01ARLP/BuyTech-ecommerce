@@ -2,7 +2,7 @@
 @section('title','Detalle')
 
 @section('content')
-  <main class="container-fluid d-flex">
+  <main class="container-fluid d-flex pb-5">
     <section class="col-sm-12 col-md-7 col-lg-7 mt-4">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -23,48 +23,66 @@
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Anterior</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Siguiente</span>
         </a>
       </div>
     </section>
 
-    <section class=" col-md-5 col-lg-5 mt-4">
+    <section class="col-md-5 col-lg-5 mt-4">
       <div class="jumbotron">
-        <p>{{$producto->marca->descripcion}} {{$producto->procesador->descripcion}} {{$producto->memoria->descripcion}} {{$producto->disco->descripcion}} {{$producto->pantalla->descripcion}} </p>
+        <p>{{$producto->marca->descripcion}}</p>
         <h1 class="">{{$producto->modelo}}</h1>
         <p class="lead">$ {{$producto->precio}}</p>
         <hr class="my-4">
-        <p> {{$producto->descripcion}}  </p>
-        <ul>
-          <li>ESPECIFICACIONES?</li>
-        </ul>
-        @auth
-          <a class="btn btn-primary btn-lg" href="/carrito/{{$producto->id}}" role="button">Comprar</a>
-        @else
-          <a id="compraGuest" class="btn btn-primary btn-lg" href="" role="button"> Comprar</a>
-        @endauth
-
-
-
-        @if (Auth::user())
-
-          @if (Auth::user()->isAdmin() == 1)
-
-            <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
-            <form class="pt-3" action="" method="post" >
-              @method("DELETE")
-              @csrf
-              <input type="hidden" value="{{$producto->id}}">
-              <button type="submit" class="btn btn-danger btn-lg" name="button" onclick="confirm('Querés eliminar este producto?')">Eliminar</button>
+        <p>{{$producto->procesador->descripcion}}
+          {{$producto->memoria->descripcion}}
+          {{$producto->disco->descripcion}}
+          {{$producto->pantalla->descripcion}}</p>
+          <p> {{$producto->descripcion}}  </p>
+          @auth
+            <form class="border-top" action="" method="post">
+              <div class="pt-3 pb-2">
+                Cantidad:
+                <select class="" name="">
+                  <option value="1">1 unidad</option>
+                  <option value="2">2 unidades</option>
+                  <option value="3">3 unidades</option>
+                  <option value="4">4 unidades</option>
+                  <option value="5">5 unidades</option>
+                  <option value=" ">+ de 6 unidades</option>
+                </select>
+              </div>
+              <div class="pt-2">
+              <a class="btn btn-primary" href="/carrito/{{$producto->id}}" role="button">Comprar</a>
+              <a class="btn btn-outline-primary" href="" role="button">Agregar a carrito</a>
+              </div>
             </form>
+          @else
+            <a id="compraGuest" class="btn btn-primary" href="" role="button"> Comprar</a>
+            <a class="btn btn-outline-primary" href="" role="button">Agregar a carrito</a>
+          @endauth
+
+
+
+          @if (Auth::user())
+
+            @if (Auth::user()->isAdmin() == 1)
+
+              <a class="btn btn-primary btn-lg" href="/productos/{{$producto->id}}/edit" role="button">Editar</a>
+              <form class="pt-3" action="" method="post" >
+                @method("DELETE")
+                @csrf
+                <input type="hidden" value="{{$producto->id}}">
+                <button type="submit" class="btn btn-danger btn-lg" name="button" onclick="confirm('Querés eliminar este producto?')">Eliminar</button>
+              </form>
+            @endif
           @endif
-        @endif
 
-      </section>
+        </section>
 
-    </main>
-  @endsection
+      </main>
+    @endsection

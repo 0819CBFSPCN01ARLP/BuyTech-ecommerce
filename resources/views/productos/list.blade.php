@@ -6,7 +6,7 @@
   <main class="container-fluid d-flex" style="padding-left: 0px;padding-right: 0px;">
 
     {{-- SIDEBAR ---> Convertir en un formulario para filtrar productos --}}
-    <nav class=" col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block container m-0">
+    <nav class="col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block container m-0">
       <div class="position-absolute">
         <form class="" action="/productos/filtered" method="get">
           @csrf
@@ -45,10 +45,6 @@
               <input type="checkbox" name="{{$disco->descripcion}}" value="{{$disco->id}}">  {{$disco->descripcion}}<br>
             @endforeach
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d57395dbe01b538ad76f14bcdfd3560681dcd6f0
           </li>
         </ul>
         <div class="pt-3">

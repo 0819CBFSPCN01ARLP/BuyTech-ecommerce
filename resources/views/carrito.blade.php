@@ -43,14 +43,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Nombre</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="required">
             <div class="invalid-feedback">
               Incluir nombre válido.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Apellido</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="required">
             <div class="invalid-feedback">
               Incluir apellido válido.
             </div>
@@ -67,7 +67,7 @@
 
         <div class="mb-3">
           <label for="address">Dirección</label>
-          <input type="text" class="form-control" id="address" placeholder="Calle 123" required="">
+          <input type="text" class="form-control" id="address" placeholder="Calle falsa 123" required="">
           <div class="invalid-feedback">
             Incluir dirección válida.
           </div>

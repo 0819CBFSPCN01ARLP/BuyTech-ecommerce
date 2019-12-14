@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="container marketing  mt-5">
+  <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
     {{-- <div class="row">

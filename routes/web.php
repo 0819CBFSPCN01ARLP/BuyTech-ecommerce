@@ -23,6 +23,14 @@ Route::get('/contacto', function(){
   return view('contacto');
 });
 
+Route::get('/compras', function(){
+  return view('compras');
+});
+
+Route::get('/exito', function(){
+  return view('exito');
+});
+
 Route::get('/carrito/{id}','ProductoController@showCompra');
 
 // RUTAS DE PRODUCTOS

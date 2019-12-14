@@ -1,8 +1,4 @@
 @extends('layouts.app')
-<<<<<<< HEAD
-
-=======
->>>>>>> d57395dbe01b538ad76f14bcdfd3560681dcd6f0
 @section('title' , 'Contacto')
 @section('content')
 <section class="container mt-5 mb-5">

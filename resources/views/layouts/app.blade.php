@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}" class="px-0 mr-0" style="width:50%">
-          <img src="/img/logo-lg.png" class="img-fluid w-25 mx-0" alt="logo">
+          <img src="/img/logo.png" class="img-fluid w-25 mx-0 pt-2 pb-1" alt="logo">
           {{-- {{ config('app.name', 'Laravel') }} --}}
         </a>
 
@@ -84,7 +84,7 @@
                     Mi cuenta
                   </a>
                   {{-- Están vacios pero quería agregar mas opciones para que quede mas lindo --}}
-                  <a class="dropdown-item" href="{{ url('') }}">
+                  <a class="dropdown-item" href="{{ url('/compras') }}">
                     Compras
                   </a>
                   @if (Auth::user()->isAdmin() == 1)
@@ -114,16 +114,25 @@
   </nav>
 </div>
 
+{{-- <div class="">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+</div> --}}
+
 <main class="">
   @yield('content')
 </main>
 </div>
 
-<footer class="footer mt-auto py-3 bg-info">
+<footer class="footer mt-auto p-3 bg-info">
   <div class="container text-center">
-    <span><a href="/contacto" class="text-light ">CONTACTO -</a></span>
-    {{-- <span><a href="contacto.php" class="text-light">NOSOTROS -</a></span> --}}
-    <span><a href="/faq" class="text-light">PREGUNTAS FRECUENTES</a></span>
+    <span><a href="/contacto" class="text-white">CONTACTO </a></span> -
+    <span><a href="/faq" class="text-white">PREGUNTAS FRECUENTES</a></span>
   </div>
 </footer>
 
