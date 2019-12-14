@@ -30,8 +30,10 @@ Route::get('/compras', function(){
 Route::get('/exito', function(){
   return view('exito');
 });
-
+//RUTAS COMPRA
 Route::get('/carrito/{id}','ProductoController@showCompra');
+Route::post('/carrito/{id}','CompraController@store');
+Route::get('/compras', 'CompraController@index');
 
 // RUTAS DE PRODUCTOS
 

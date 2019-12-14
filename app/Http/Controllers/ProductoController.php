@@ -9,6 +9,7 @@ use App\Memoria;
 use App\Disco;
 use App\Pantalla;
 use App\Procesador;
+use App\User;
 
 class ProductoController extends Controller
 {

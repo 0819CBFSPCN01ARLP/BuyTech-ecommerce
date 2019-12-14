@@ -126,7 +126,8 @@
   </div>
 </footer>
 
-<script src="/js/buytech.js" type="text/javascript"> </script>
+<script src="{{ URL::asset('js/buytech.js') }}" type="text/javascript"> </script>
+<script src="{{ URL::asset('js/listadoProvincias.js') }}" type="text/javascript"></script>
 
 </body>
 </html>

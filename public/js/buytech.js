@@ -6,7 +6,6 @@
 //   let password = document.forms["registro"]["password_confirmation"];
 //
 // }
-
 let botonCompra = document.getElementById('compraGuest');
 if(botonCompra){
   botonCompra.onclick = function (evt){
