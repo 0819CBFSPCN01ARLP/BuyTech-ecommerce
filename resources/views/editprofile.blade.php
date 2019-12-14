@@ -74,7 +74,7 @@
                               </div>
                           </div>
                           <div class="form-group row">
-                              <label for="codigo_postal" class="col-md-4 col-form-label text-md-right">{{ __('Codigo_postal') }}</label>
+                              <label for="codigo_postal" class="col-md-4 col-form-label text-md-right">{{ __('Codigo postal') }}</label>
 
                               <div class="col-md-6">
                                   <input id="codigo_postal" type="text" class="form-control @error('codigo_postal') is-invalid @enderror" name="codigo_postal" required autocomplete="on">
@@ -95,8 +95,10 @@
                             <label for="provincia" class="col-md-4 col-form-label text-md-right">{{ __('Provincia') }}</label>
 
                             <div class="col-md-6">
-                              <input id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" required autocomplete="on">
+                              {{-- <input id="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" required autocomplete="on"> --}}
+                                <select class="col-md-12" id="selectProvincias">
 
+                                </select>
 
                               </div>
                             </div>
@@ -124,5 +126,8 @@
               </div>
           </div>
       </div>
+      {{-- <script src="public/listadoProvincias.js" type="text/javascript"> --}}
+
+      </script>
   </div>
 @endsection
