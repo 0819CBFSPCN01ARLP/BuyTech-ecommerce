@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'apellido', 'email', 'password', 'rol', 'direccion', 'celular', 'codigo_postal', 'ciudad', 'provincia', 'pais'
+        'nombre', 'apellido', 'email', 'password', 'rol', 'direccion', 'celular', 'codigo_postal', 'ciudad', 'provincia', 'pais', 'id_usuario'
     ];
 
     /**
@@ -41,5 +41,8 @@ class User extends Authenticatable
       return $this->rol;
     }
 
+    public function compra(){
+      return $this->hasMany('App\Compra', 'id_usuario');
+    }
 
 }

@@ -28,7 +28,8 @@
 
       {{-- FORMULARIO PARA CHECKOUT --}}
 
-      <form class="card p-2">
+      <form method="post" class="card p-2">
+        @csrf
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Código de descuento">
           <div class="input-group-append">
@@ -43,14 +44,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Nombre</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="required">
+            <input type="text" class="form-control" id="firstName" placeholder="" value="{{Auth::user()->nombre}}" required="required">
             <div class="invalid-feedback">
               Incluir nombre válido.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Apellido</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="required">
+            <input type="text" class="form-control" id="lastName" placeholder="" value="{{Auth::user()->apellido}}" required="required">
             <div class="invalid-feedback">
               Incluir apellido válido.
             </div>
@@ -59,7 +60,7 @@
 
         <div class="mb-3">
           <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-          <input type="email" class="form-control" id="email" placeholder="tuemail@gmail.com">
+          <input value="{{Auth::user()->email}}" type="email" class="form-control" id="email" placeholder="">
           <div class="invalid-feedback">
             Por favor ingresa un mail válido para recibir información de envío.
           </div>
@@ -67,7 +68,7 @@
 
         <div class="mb-3">
           <label for="address">Dirección</label>
-          <input type="text" class="form-control" id="address" placeholder="Calle falsa 123" required="">
+          <input type="text" value="{{Auth::user()->direccion}}" class="form-control" id="address" placeholder="Calle falsa 123" required="">
           <div class="invalid-feedback">
             Incluir dirección válida.
           </div>
@@ -86,9 +87,8 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">Provincia</label>
-            <select class="custom-select d-block w-100" id="state" required="">
-              <option value="">Elegir...</option>
-              <option>Buenos Aires</option>
+            <select class="custom-select d-block w-100" id="selectProvincias" required="">
+
             </select>
             <div class="invalid-feedback">
               Seleccioná un país válido.
@@ -96,7 +96,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Código postal</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required="">
+            <input value="{{Auth::user()->codigo_postal}}" type="text" class="form-control" id="zip" placeholder="" required="">
             <div class="invalid-feedback">
               El código postal es necesario.
             </div>
@@ -160,6 +160,8 @@
           </div>
         </div>
         <hr class="mb-4">
+        <input name="invisibleUserId" type="hidden" value="{{Auth::user()->id}}">
+        <input name="invisibleProductId" type="hidden" value="{{$producto->id}}">
         <button id="compraFinalizada" class="btn btn-primary btn-lg btn-block" type="submit">Finalizar compra</button>
       </form>
     </div>

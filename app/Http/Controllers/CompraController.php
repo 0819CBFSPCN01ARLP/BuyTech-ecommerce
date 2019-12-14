@@ -35,7 +35,14 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $compra = new Compra();
+      $compra->id_usuario = $request["invisibleUserId"];
+      $compra->fecha_de_compra = time();
+      $compra->save();
+
+      $compra->productos->attach($request["invisibleProductId"], ["cantidad" => 1, "precio" => $product->precio]);
+
+      return view('productos.list');
     }
 
     /**
