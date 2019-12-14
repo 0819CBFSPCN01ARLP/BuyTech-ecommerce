@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Producto;
 use App\Compra;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
@@ -14,7 +17,9 @@ class CompraController extends Controller
      */
     public function index()
     {
-        //
+      $compras = Auth::user()->compra;
+      $vac = compact('compras');
+      return view('compras', $vac);
     }
 
     /**
@@ -37,12 +42,13 @@ class CompraController extends Controller
     {
       $compra = new Compra();
       $compra->id_usuario = $request["invisibleUserId"];
-      $compra->fecha_de_compra = time();
+      $compra->fecha_de_compra = date('Y-m-d H:i:s');
       $compra->save();
+      $producto = Producto::find($request["invisibleProductId"]);
 
-      $compra->productos->attach($request["invisibleProductId"], ["cantidad" => 1, "precio" => $product->precio]);
+      $compra->productos()->attach($request["invisibleProductId"], ["cantidad" => 1, "precio" => $producto->precio]);
 
-      return view('productos.list');
+      return redirect('/productos');
     }
 
     /**
