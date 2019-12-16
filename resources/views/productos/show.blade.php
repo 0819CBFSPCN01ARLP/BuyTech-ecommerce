@@ -48,7 +48,7 @@
             <form class="border-top" action="" method="post">
               <div class="pt-3 pb-2">
                 Cantidad:
-                <select id="masSeis" class="" name="" >
+                <select id="masSeis" class="" name="" required>
                   <option value="1">1 unidad</option>
                   <option value="2">2 unidades</option>
                   <option value="3">3 unidades</option>

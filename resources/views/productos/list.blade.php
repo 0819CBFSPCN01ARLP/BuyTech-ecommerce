@@ -6,7 +6,7 @@
   <main class="container-fluid d-flex" style="padding-left: 0px;padding-right: 0px;">
 
     {{-- SIDEBAR ---> Convertir en un formulario para filtrar productos --}}
-    <nav class="col-sm-2 col-md-2 col-lg-2 d-inline d-xs-none d-sm-none d-md-block container m-0">
+    <nav class="col-md-2 col-lg-2 d-inline d-sm-none d-md-block container m-0">
       <div class="position-absolute">
         <form class="" action="/productos/filtered" method="get">
           @csrf
@@ -48,17 +48,17 @@
             </li>
           </ul>
           <div class="pt-3">
-            <input class="btn " type="submit" name="" value="Aplicar filtro">
-            <input class="btn "type="button" name="" value="Limpiar">
+            <input class="btn btn-sm" type="submit" name="" value="Aplicar filtro">
+            <input class="btn btn-sm" type="button" name="" value="Limpiar">
           </div>
         </form>
       </div>
     </nav>
 
     {{-- Tarjeta de producto --}}
-    <section class="col-md-10 row">
+    <section class="col-sm-12 col-md-10 row ">
       @foreach ($productos as $producto)
-        <div class="card col-sm-12 col-md-12 col-lg-3 m-3" >
+        <div class="card border-0 shadow-sm col-sm-12 col-md-12 col-lg-3 m-3" >
           <img src="https://images.fravega.com/s250/438f0f480558b68580f361267d598856.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{$producto->modelo}}</h5>
@@ -68,7 +68,8 @@
           </div>
         </div>
       @endforeach
-      <div class="d-block col-lg-12">
+
+      <div class="row d-block container justify-content-center">
         {{$productos->links()}}
       </div>
     </section>

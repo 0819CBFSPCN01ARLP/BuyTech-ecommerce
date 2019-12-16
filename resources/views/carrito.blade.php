@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Buytech')
+@section('title','Checkout')
 @section('content')
 
   <div class="p-5">
@@ -69,7 +69,7 @@
 
           <div class="mb-3">
             <label for="address">Dirección</label>
-            <input type="text" value="{{Auth::user()->direccion}}" class="form-control" id="address" placeholder="Calle falsa 123" required="">
+            <input type="text" value="{{Auth::user()->direccion}}" class="form-control" id="address" placeholder="Calle falsa 123" required="required">
             <div class="invalid-feedback">
               Incluir dirección válida.
             </div>
@@ -78,7 +78,7 @@
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="country">País</label>
-              <select class="custom-select d-block w-100" id="country" required="">
+              <select class="custom-select d-block w-100" id="country" required="required">
                 <option value="">Elegir...</option>
                 <option>Argentina</option>
               </select>
@@ -88,7 +88,7 @@
             </div>
             <div class="col-md-4 mb-3">
               <label for="state">Provincia</label>
-              <select class="custom-select d-block w-100" id="selectProvincias" required="">
+              <select class="custom-select d-block w-100" id="selectProvincias" required="required">
 
               </select>
               <div class="invalid-feedback">
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="zip">Código postal</label>
-              <input value="{{Auth::user()->codigo_postal}}" type="text" class="form-control" id="zip" placeholder="" required="">
+              <input value="{{Auth::user()->codigo_postal}}" type="text" class="form-control" id="zip" placeholder="" required="required">
               <div class="invalid-feedback">
                 El código postal es necesario.
               </div>
@@ -129,7 +129,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cc-name">Nombre de la tarjeta</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="required">
               <small class="text-muted">Escribí el nombre completo como aparece en la tarjeta.</small>
               <div class="invalid-feedback">
                 El nombre de la tarjeta es necesario.
@@ -137,7 +137,7 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="cc-number">Número de la tarjeta</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="required">
               <div class="invalid-feedback">
                 El numero de la tarjeta es necesario.
               </div>
@@ -146,14 +146,14 @@
           <div class="row">
             <div class="col-md-3 mb-3">
               <label for="cc-expiration">Vencimiento</label>
-              <input type="date" class="form-control" id="cc-expiration" placeholder="" required="">
+              <input type="date" class="form-control" id="cc-expiration" placeholder="" required="required">
               <div class="invalid-feedback">
                 La fecha de vencimiento es necesaria.
               </div>
             </div>
             <div class="col-md-3 mb-3">
               <label for="cc-cvv">Código de seguridad</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="required">
               <small class="text-muted">En el dorso de tu tarjeta.</small>
               <div class="invalid-feedback">
                 El código de seguridad es necesario.

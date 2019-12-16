@@ -32,27 +32,26 @@
 </head>
 <body>
   <div class="sticky-top" id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}" class="px-0 mr-0" style="width:50%">
-          <img src="/img/logo.png" class="img-fluid w-25 mx-0 pt-2 pb-1" alt="logo">
-          {{-- {{ config('app.name', 'Laravel') }} --}}
+    <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+      {{-- <div class="container"> --}}
+        <a class="navbar-brand" href="{{ url('/') }}" class=" mr-0" style="width:50%">
+          <img src="/img/logo.png" class=" w-25 mx-0 pt-2 pb-1" alt="logo">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
-{{-- aaa --}}
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
 
             <form action=" " method="GET" role="search">
               {{ csrf_field() }}
-              <div class="input-group">
+              <div class="input-group input-group-sm pt-2">
                 <input type="text" class="form-control" name="query" placeholder="¿Qué buscas?">
                 <span class="input-group-btn pl-1">
-                  <button type="submit" class="btn btn-primary">
+                  <button type="submit" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-search"><ion-icon name="search"></ion-icon></span>
                   </button>
                 </span>
@@ -60,6 +59,7 @@
             </form>
 
           </ul>
+
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -74,7 +74,7 @@
                 </li>
               @endif
             @else
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown pt-2">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   Mi cuenta: {{Auth::user()->nombre }} {{Auth::user()->apellido}} <span class="caret"></span>
                 </a>
@@ -109,6 +109,7 @@
             </li>
           @endguest
         </ul>
+
       </div>
     </div>
   </nav>
@@ -121,8 +122,9 @@
 
 <footer class="footer mt-auto p-3 bg-info">
   <div class="container text-center">
-    <span><a href="/contacto" class="text-white">CONTACTO       </a></span> 
-    <span><a href="/faq" class="text-white">PREGUNTAS FRECUENTES</a></span>
+    <span><a href="/contacto" class="text-white">Contacto</a></span>
+    <span class="text-white"> - </span>
+    <span><a href="/faq" class="text-white">Preguntas Frecuentes</a></span>
   </div>
 </footer>
 

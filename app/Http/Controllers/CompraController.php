@@ -48,7 +48,7 @@ class CompraController extends Controller
 
       $compra->productos()->attach($request["invisibleProductId"], ["cantidad" => 1, "precio" => $producto->precio]);
 
-      return redirect('/productos');
+      return redirect('/exito');
     }
 
     /**
