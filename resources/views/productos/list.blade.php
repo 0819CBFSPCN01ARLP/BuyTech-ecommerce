@@ -6,7 +6,7 @@
   <main class="container-fluid d-flex" style="padding-left: 0px;padding-right: 0px;">
 
     {{-- SIDEBAR ---> Convertir en un formulario para filtrar productos --}}
-    <nav class="col-md-2 col-lg-2 d-inline d-sm-none d-md-block container m-0">
+    <nav class="col-sm-3 col-md-2 col-lg-2  d-md-block container m-0">
       <div class="position-absolute">
         <form class="" action="/productos/filtered" method="get">
           @csrf
@@ -56,9 +56,9 @@
     </nav>
 
     {{-- Tarjeta de producto --}}
-    <section class="col-sm-12 col-md-10 row ">
+    <section class="col-sm-9 col-md-10 row ">
       @foreach ($productos as $producto)
-        <div class="card border-0 shadow-sm col-sm-12 col-md-12 col-lg-3 m-3" >
+        <div class="card border-0 shadow-sm col-sm-5 col-md-4 col-lg-3 m-3" >
           <img src="https://images.fravega.com/s250/438f0f480558b68580f361267d598856.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{$producto->modelo}}</h5>
