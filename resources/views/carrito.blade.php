@@ -40,19 +40,19 @@
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Dirección de envío</h4>
-        <form method="POST" class="needs-validation" novalidate="">
+        <form method="POST" class="needs-validation" name="carrito" >
           @csrf
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="{{Auth::user()->nombre}}" required="required">
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="{{Auth::user()->nombre}}" required="required">
               <div class="invalid-feedback">
                 Incluir nombre válido.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Apellido</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="{{Auth::user()->apellido}}" required="required">
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="{{Auth::user()->apellido}}" required="required">
               <div class="invalid-feedback">
                 Incluir apellido válido.
               </div>
@@ -61,7 +61,7 @@
 
           <div class="mb-3">
             <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-            <input value="{{Auth::user()->email}}" type="email" class="form-control" id="email" placeholder="">
+            <input value="{{Auth::user()->email}}" name="email" type="email" class="form-control" id="email" placeholder="">
             <div class="invalid-feedback">
               Por favor ingresa un mail válido para recibir información de envío.
             </div>
@@ -69,7 +69,7 @@
 
           <div class="mb-3">
             <label for="address">Dirección</label>
-            <input type="text" value="{{Auth::user()->direccion}}" class="form-control" id="address" placeholder="Calle falsa 123" required="required">
+            <input type="text" value="{{Auth::user()->direccion}}" name="direccion" class="form-control" id="address" placeholder="Calle falsa 123" required="required">
             <div class="invalid-feedback">
               Incluir dirección válida.
             </div>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md-3 mb-3">
               <label for="zip">Código postal</label>
-              <input value="{{Auth::user()->codigo_postal}}" type="text" class="form-control" id="zip" placeholder="" required="required">
+              <input value="{{Auth::user()->codigo_postal}}" type="text" class="form-control" name="zip" id="zip" placeholder="" required="required">
               <div class="invalid-feedback">
                 El código postal es necesario.
               </div>
@@ -129,7 +129,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cc-name">Nombre de la tarjeta</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required="required">
+              <input type="text" name="cc-name" class="form-control" id="cc-name" placeholder="{{Auth::user()->nombre}} {{Auth::user()->apellido}}" required="required">
               <small class="text-muted">Escribí el nombre completo como aparece en la tarjeta.</small>
               <div class="invalid-feedback">
                 El nombre de la tarjeta es necesario.
@@ -137,7 +137,7 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="cc-number">Número de la tarjeta</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required="required">
+              <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="" required="required">
               <div class="invalid-feedback">
                 El numero de la tarjeta es necesario.
               </div>
@@ -146,14 +146,14 @@
           <div class="row">
             <div class="col-md-3 mb-3">
               <label for="cc-expiration">Vencimiento</label>
-              <input type="date" class="form-control" id="cc-expiration" placeholder="" required="required">
+              <input type="date" class="form-control" name="cc-expiration" id="cc-expiration" placeholder="" required="required">
               <div class="invalid-feedback">
                 La fecha de vencimiento es necesaria.
               </div>
             </div>
             <div class="col-md-3 mb-3">
               <label for="cc-cvv">Código de seguridad</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="required">
+              <input type="text" class="form-control" id="cc-cvv" name="cc-cvv" placeholder="" required="required">
               <small class="text-muted">En el dorso de tu tarjeta.</small>
               <div class="invalid-feedback">
                 El código de seguridad es necesario.
@@ -163,12 +163,12 @@
           <hr class="mb-4">
           <input name="invisibleUserId" type="hidden" value="{{Auth::user()->id}}">
           <input name="invisibleProductId" type="hidden" value="{{$producto->id}}">
-          <button id="compraFinalizada" class="btn btn-primary btn-lg btn-block" type="submit">Finalizar compra</button>
+          <button id="compraFinalizada" class="btn btn-primary btn-lg btn-block" onclick="validarCarrito();" type="submit">Finalizar compra</button>
         </form>
       </div>
     </div>
 
   </div>
-
+  <script src="validacionCarrito.js" charset="utf-8"></script>
 
 @endsection

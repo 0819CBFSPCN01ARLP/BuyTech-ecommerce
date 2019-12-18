@@ -48,7 +48,7 @@
         <div class="card mb-3 border-0 shadow-sm" style="max-width: 100%;">
           <div class="row no-gutters">
             <div class="col-md-12">
-              <img src="/img/computer.svg" class="card-img p-3" alt="Productos" style="max-width:">
+              <img src="/img/computer.svg" class="card-img p-3" alt="Productos" style="max-width: 100%">
             </div>
             <div class="">
               <div class="card-body d-block card-img-overlay">
@@ -65,7 +65,7 @@
         <div class="card mb-3 border-0 shadow-sm" style="max-width: 100%;">
           <div class="row no-gutters">
             <div class="col-md-12">
-              <img src="/img/phone.svg" class="card-img p-3" alt="Productos" style="max-width:">
+              <img src="/img/phone.svg" class="card-img p-3" alt="Productos" style="max-width:100%">
             </div>
             <div class="">
               <div class="card-body d-block card-img-overlay">
@@ -82,7 +82,7 @@
         <div class="card mb-3 border-0 shadow-sm" style="max-width: 100%;">
           <div class="row no-gutters">
             <div class="col-md-12">
-              <img src="/img/tablet.svg" class="card-img p-3" alt="Productos" style="max-width:">
+              <img src="/img/tablet.svg" class="card-img p-3" alt="Productos" style="max-width:100%">
             </div>
             <div class="">
               <div class="card-body d-block card-img-overlay">

@@ -120,7 +120,7 @@
 </main>
 </div>
 
-<footer class="footer mt-auto p-3 bg-info">
+<footer class="footer mt-auto p-3 bg-info w-100">
   <div class="container text-center">
     <span><a href="/contacto" class="text-white">Contacto</a></span>
     <span class="text-white"> - </span>
